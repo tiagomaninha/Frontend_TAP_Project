@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
+    line-height: 1.2;
+}
+
+@mixin animacaoBorda($espessura) {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: $espessura;
+    bottom: calc(-2px - $espessura);
+    left: 50%;
+    background-color: white;
+    border-radius: 20px;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* CABECALHO (USANDO OS SELETORES CSS E NAO USANDO O QUE O SASS PERMITE)  */
+
+.top-header {
+    margin: 0;
+    z-index: 1;
+    padding: 0 1.5%;
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: rgba(44,44,44,0.2);
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: white;
+}
+
+.top-header li {
+    padding: 8px;
+    
+    a {
+        color: white;
+        font-size: 14px;
+        font-weight: 50;
+        text-decoration: none;
+    }
+}
+
+.top-header li:last-child {
+    display: flex;
+}
+
+.top-header li:last-child img {
+    height: 15px;
+    margin: auto;
+}
+
+.top-header li:last-child span {
+    justify-content: center;
+    margin-left: 10px;
+}
+
+/* ON HOVER */
+
+.top-header li:not(:first-child) {
+    position: relative;
+    cursor: pointer;
+}
+
+.top-header li span {
+    position: relative;
+}
+
+.top-header li:not(:first-child) span::after {
+    @include animacaoBorda(0.5px);
+}
+
+.top-header li:not(:first-child):hover span::after {
+    width: 100%;
+    left: 0;
+}
+
+/* SASS */
+
+/* MAIN HEADER */
+
+.main-header {
+    padding: 0 25px;
+    margin: 0;
+    font-size: 16px;
+    display: flex;
+    -ms-flex-align: start;
+    font-weight: normal;
+    list-style: none;
+    color: white;
+
+    li {
+        position: relative;
+        padding: 16px;
+        height: fit-content;
+
+        span {
+            position: relative;
+        }
+        
+        &:not(:first-child):hover {
+            cursor: pointer;
+        }
+
+        &:not(:first-child) > span::after {
+            @include animacaoBorda(2.5px);
+        }
+
+        &:not(:first-child):hover > span::after {
+            width: 100%;
+            left: 0;
+        }
+
+        &:first-child {
+            margin-right: 5%;
+            img{
+                margin: auto;
+                width: 100%;
+                height: auto;
+                max-width: 163px;
+            } 
+        }
+
+        &:last-child {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background-color: #72be44;
+            border-radius: 50%;
+
+            img {
+                margin: auto;
+                height: 15px;
+            }
+        }
+        
+
+    }
+
+   
+
+
+}
+
+
+/* BACKGROUND */
+
+.background-container {
+    position: absolute;
+    width: 100%;
+    height: 70vh;
+    z-index: -1;
+    overflow: hidden;
+    filter: brightness(0.6);
+}
+
+.image-container {
+    display: none;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 40px 400px 0px #000;
+    
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+    }
+}
+
+.active {
+    display: block;
+}
