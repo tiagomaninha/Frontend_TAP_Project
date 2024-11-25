@@ -23,6 +23,18 @@ header {
     position: absolute;
     width: 100%;
     z-index: 1;
+    color: white;
+}
+
+.fixed {
+    position: fixed;
+    background-color: white;
+    color: black;
+    z-index: 10;
+}
+
+.fixed .top-header {
+    display: none;
 }
 
 .top-header {
@@ -90,7 +102,7 @@ header {
 /* MAIN HEADER */
 
 .main-header {
-    padding: 0 15px;
+    padding: 0 1.5%;
     margin: 0;
     font-size: 16px;
     display: flex;
@@ -98,10 +110,10 @@ header {
     font-weight: normal;
     list-style: none;
     user-select: none;
-    color: white;
 
     li {
         position: relative;
+        margin: auto 0;
         padding: 16px;
         height: fit-content;
 
@@ -112,7 +124,7 @@ header {
         &:not(:first-child):hover {
             cursor: pointer;
         }
-
+        
         &:not(:first-child) > span::after {
             @include animacaoBorda(2.5px);
         }
@@ -123,13 +135,39 @@ header {
         }
 
         &:first-child {
-            margin-right: 5%;
-            img{
+            margin-right: 10px;
+            
+            img {
                 margin: auto;
                 width: 100%;
                 height: auto;
                 max-width: 163px;
-            } 
+                
+                &:not(#whiteLogo) {
+                    display: none;
+                }
+
+                @media screen and (min-width: 1024px) and (max-width: 1150px) {
+                    &#mediaLogo {
+                        display: block; 
+                        max-width: 80px;
+                    }
+                    
+                    &:not(#mediaLogo) {
+                        display: none;
+                    }
+                }
+
+                @media screen and (max-width: 1024px) {
+                    &#blackLogo {
+                        display: block; 
+                    }
+                    
+                    &:not(#blackLogo) {
+                        display: none;
+                    }
+                }
+            }
         }
 
         &:last-child {
@@ -139,6 +177,7 @@ header {
             width: 8px;
             height: 8px;
             background-color: #72be44;
+            box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.2);
             border-radius: 50%;
 
             img {
@@ -153,50 +192,82 @@ header {
     }
 }
 
-
 /* BACKGROUND */
-
 .background-container {
     position: relative;
     user-select: none;
     width: 100%;
-    height: 70vh;
+    height: 52vh;
     overflow: hidden;
-    
-    .image-container {
-        position: absolute;
-        display: flex;
-        flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    touch-action: pan-x;
+
+
+    .slide {
+        position: relative;
+        flex-shrink: 0;
         width: 100%;
         height: 100%;
-        touch-action: pan-x;
-        z-index: -1;
-        filter: brightness(0.5);
-        
-        .image {
-            position: relative;
-            flex-shrink: 0;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.3s ease-in-out;
-            pointer-events: none;
-            box-shadow: inset 0px 40px 400px 0px #000;
-            
+        transition: transform 0.3s ease-in-out;
+        pointer-events: none;
+
+        .image-boxshadow { 
+            &::after { // BOX SHADOW (SOMBRA À VOLTA DA IMAGEM)
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                box-shadow: inset 0px 40px 400px 0px #000000;
+            }
+
             img {
                 position: absolute;
+                filter: brightness(0.5);
+                top: 0;
+                left: 0;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
         }
-    }
+        // TEXTO
 
-    // .title-container {
-    //     position: relative;
-    //     width: 100%;
-    //     height: auto;
-    //     margin: 10% 0;
-    //     z-index: 1;
-    //     background-color: pink;
-    // }
-} 
+        .text-container {
+            position: absolute;
+            top: 18%;
+            left: 0;
+            width: 100vw;
+            height: auto;
+            z-index: 1;
+            
+            .text {
+                position: relative;
+                padding: 0 20%;
+                overflow: hidden;
+                color: white;
+
+                h1 {
+                    position: relative;
+                    font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
+                    line-height: 118%;
+                    font-size: 2.625rem;
+                }
+            }
+        }
+    }
+}
+
+.info-container {
+    position: relative;
+    top: -18vh;
+    width: 60%;
+    height: 30vh;
+    margin: 0 auto;
+    border-top: 12px solid #72be44;
+    border-radius: 6px 6px 4px 4px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 7px 0 rgba(102,102,102,.12);
+}
