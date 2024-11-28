@@ -143,8 +143,16 @@ header {
   height: auto;
   max-width: 163px;
 }
-.main-header li:first-child img:not(#whiteLogo) {
-  display: none;
+@media screen and (min-width: 1150px) {
+  .main-header li:first-child img:not(#whiteLogo) {
+    display: none;
+  }
+  .main-header li:first-child img.showImage {
+    display: block !important;
+  }
+  .main-header li:first-child img.hideImage {
+    display: none;
+  }
 }
 @media screen and (min-width: 1024px) and (max-width: 1150px) {
   .main-header li:first-child img#mediaLogo {
@@ -189,7 +197,7 @@ header {
      -moz-user-select: none;
           user-select: none;
   width: 100%;
-  height: 52vh;
+  height: 500px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -223,16 +231,16 @@ header {
      object-fit: cover;
 }
 .background-container .slide .text-container {
-  position: absolute;
+  position: relative;
   top: 18%;
   left: 0;
-  width: 100vw;
+  max-width: 1188px;
   height: auto;
+  margin: 0 auto;
   z-index: 1;
 }
 .background-container .slide .text-container .text {
   position: relative;
-  padding: 0 20%;
   overflow: hidden;
   color: white;
 }
@@ -245,14 +253,42 @@ header {
 
 .info-container {
   position: relative;
-  top: -18vh;
-  width: 60%;
-  height: 30vh;
+  max-width: 1188px;
+  height: 300px;
   margin: 0 auto;
+  margin-top: -200px;
+}
+.info-container .dots-container {
+  position: relative;
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  height: 10px;
+  margin-bottom: 10px;
+}
+.info-container .dots-container div {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: width 0.2s ease-in-out;
+}
+.info-container .dots-container .active {
+  background-color: white;
+  width: 20px;
+  border-radius: 4px;
+}
+.info-container .info {
+  position: relative;
+  width: 100%;
+  height: 280px;
   border-top: 12px solid #72be44;
   border-radius: 6px 6px 4px 4px;
   background-color: #f5f5f5;
-  box-shadow: 0 4px 7px 0 rgba(102, 102, 102, 0.12);
+  box-shadow: 0 4px 7px 0 rgba(102, 102, 102, 0.19);
 }
 
 h6 {
