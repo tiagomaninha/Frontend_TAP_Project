@@ -311,6 +311,95 @@ header {
         border-radius: 6px 6px 4px 4px;
         background-color: #f5f5f5;
         box-shadow: 0 4px 7px 0 rgba(102, 102, 102, 0.19);
+
+        .multi-menu-container {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                flex: 1 1 0;
+                text-align: center;
+                border-bottom: 1px solid #ededed;
+                border-left: 1px solid #ededed;
+                
+                button {
+                    cursor: pointer;
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    padding: 10px;
+                    border: none;
+                    background-color: white;
+                    
+                    .icon-menu {
+                        position: relative;
+                        display: none;
+                        padding: 2px;
+                        width: 32px;
+                        height: 32px;
+                        background-color: #127045;
+                        border-radius: 50%;
+                        margin: auto;
+                        margin-right: 8px;
+
+                        svg {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 100%;
+                            fill: white;
+                        }
+                    }
+                    
+                    .label-menu {
+                        font-family: Montserrat, Montserrat-local-backup, Arial, Helvetica, sans-serif;
+                        font-weight: 400;
+                        font-size: 14px;
+                        position: relative;
+                        margin: auto;
+                    }
+                }
+            }
+            
+            li:not(.active) {
+                button:hover {
+                    transition: all ease-in 0.2s;
+
+                    background-color: transparent;
+                    .label-menu {
+                        color: #127045;
+                    }
+                }
+            }
+
+            .active {
+                border-bottom: none;
+                
+                button {
+                    background-color: #f5f5f5;
+                    cursor:auto;
+                    .icon-menu {
+                        display: block;
+                    }
+    
+                    .label-menu::before {
+                        width: 100%;
+                        height: 10px;
+                        background-color: olive;
+                    }
+
+                    .label-menu {
+                        margin-left: 0;
+                        font-weight: bolder;
+                    }
+                }
+
+            }
+        }
+
     }
 }
 
@@ -330,12 +419,12 @@ h6{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-   
-   
-   
-    .oslinks{
-        list-style-type: none;
+
+    ul {
+        list-style: none;
     }
+   
+
 
 
 
