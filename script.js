@@ -1,6 +1,7 @@
 // SLIDES 
 let slides = document.querySelectorAll(".slide"); 
 let botoesSlides = document.querySelectorAll(".dots-container div")
+let botoesMenu = document.querySelectorAll(".multi-menu-container button")
 let currentSlide = 0;
 const totalSlides = slides.length - 1;
 
@@ -28,7 +29,7 @@ function moveSlide() {
 
 setInterval(() => {
     let slide
-    let elementoAtivo = document.querySelector(".active")
+    let elementoAtivo = document.querySelector(".dots-container .active")
     
     currentSlide++;
     slide = currentSlide
@@ -43,7 +44,7 @@ setInterval(() => {
 }, 20 * 1000); // 30 segundos
 
 function changeSlide(n) {
-    let elementoAtivo = document.querySelector(".active")
+    let elementoAtivo = document.querySelector(".dots-container .active")
 
     elementoAtivo.classList.remove("active")
     botoesSlides[n-1].classList.toggle("active")
@@ -65,24 +66,35 @@ window.onscroll = function() {
 
 var blackLogo = document.getElementById("blackLogo");
 var whiteLogo = document.getElementById("whiteLogo");
-var header = document.querySelector("header"); 
-var sticky = header.offsetTop;
+var mainHeader = document.querySelector(".main-header"); 
+var sticky = mainHeader.offsetTop;
 
 function fixarHeader(bool) {
     if (window.scrollY > sticky) {
-        header.classList.add("fixed");
+        mainHeader.classList.add("fixed");
 
         if (!bool) {
             blackLogo.classList.add("showImage")
             whiteLogo.classList.add("hideImage")
         }
     } else {
-        header.classList.remove("fixed");
+        mainHeader.classList.remove("fixed");
 
-        
         if (!bool) {
             blackLogo.classList.remove("showImage")
             whiteLogo.classList.remove("hideImage")
         }
     }
 }    
+
+botoesMenu.forEach((botao) => {
+    botao.addEventListener("click", function(event) {
+        let elementoAtivo = document.querySelector(".multi-menu-container .active")
+        let pai = event.target.parentElement
+        
+        elementoAtivo.classList.remove("active")
+        pai.classList.toggle("active")
+
+        console.log("aqui", event.target.parentElement)
+    })
+});

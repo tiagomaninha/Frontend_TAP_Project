@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyTAP</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">  
 </head>
 <body>
@@ -44,34 +44,40 @@
                 <span>PT</span>
             </li>
         </ul>
-        <ul class = "main-header">
-            <li>
-                <img id = "blackLogo" src="img/TAPLogo_preto.svg">
-                <img id = "whiteLogo" src="img/TAPLogo_branco.svg">
-                <img id = "mediaLogo" src="img/TAPLogo_media.svg">
-            </li>
-            <li>
-                <span>Viajar</span>
-            </li>
-            <li>
-                <span>Gerir reserva</span>
-            </li>
-            <li>
-                <span>Check-in</span>
-            </li>
-            <li>
-                <span>Antes de partida</span>
-            </li>
-            <li>
-                <span>TAP Miles&Go</span>
-            </li>
-            <li>
-                <span>Ajuda</span>
-            </li>
-            <li>
-                <img src = "img/svg-sprite-header.svg#procura"/>
-            </li>
-        </ul>
+        <div class = "main-header">
+            <ul>
+                <li>
+                    <img id = "blackLogo" src="img/TAPLogo_preto.svg">
+                    <img id = "whiteLogo" src="img/TAPLogo_branco.svg">
+                    <img id = "mediaLogo" src="img/TAPLogo_media.svg">
+                </li>
+                <li>
+                    <span>Viajar</span>
+                </li>
+                <li>
+                    <span>Gerir reserva</span>
+                </li>
+                <li>
+                    <span>Check-in</span>
+                </li>
+                <li>
+                    <span>Antes de partida</span>
+                </li>
+                <li>
+                    <span>TAP Miles&Go</span>
+                </li>
+                <li>
+                    <span>Ajuda</span>
+                </li>
+                <li>
+                    <!-- <img src = "img/icons/user.svg"/> -->
+                </li>
+                <li>
+                    <!-- &#9776; -->
+                    <img src = "img/icons/lupa.svg"/>
+                </li>
+            </ul>
+        </div>
     </header>
     <section class = "background-container">
         <div class = "slide">
@@ -80,9 +86,10 @@
                     <h1>Descubra os novos menus da<br> Classe Executiva</h1>
                     <p>Os ingredientes locais são as nossas estrelas!</p>
                 </div>
+                <button>Saiba mais</button>
             </div>
             <div class = "image-boxshadow">
-                <img src = "img/backgroundimage.jpg">
+                <img src = "img/background1.jpg">
             </div>
         </div>
         <div class = "slide">
@@ -91,9 +98,10 @@
                     <h1>Black FLYday: Não, os preços<br> não istão erradus</h1>
                     <p>Reserve até 4 de dezembro!</p>
                 </div>
+                <button>Reserve já</button>
             </div>
             <div class = "image-boxshadow">
-                <img src = "img/1124-BF-FlyTAP1920x500.jpg">
+                <img src = "img/background2.jpg">
             </div>
         </div>
         <div class = "slide">
@@ -102,9 +110,10 @@
                     <h1>Ganhe 2x milhas: o dobro das<br> razões para viajar</h1>
                     <p>Só até 5 de dezembro, compre milhas e receba o dobro.</p>
                 </div>
+                <button>Saiba mais</button>
             </div>
             <div class = "image-boxshadow">
-                <img src = "img/BBHP-loja-1920x500.jpg">
+                <img src = "img/background3.jpg">
             </div>
         </div>
         <div class = "slide">
@@ -113,9 +122,10 @@
                     <h1>Descubra os novos menus da<br> Classe Executiva</h1>
                     <p>Os ingredientes locais são as nossas estrelas!</p>
                 </div>
+                <button>Saiba mais</button>
             </div>
             <div class = "image-boxshadow">
-                <img src = "img/backgroundimage.jpg">
+                <img src = "img/background1.jpg">
             </div>
         </div>
     </section>
@@ -131,7 +141,7 @@
                     <button>
                         <div class = "icon-menu">
                             <svg>
-                                <use xlink:href="img/icons.svg#general--calendar"></use>
+                                <use xlink:href="img/icons/icons.svg#general--calendar"></use>
                             </svg>
                         </div>
                         <span class = "label-menu">
@@ -142,7 +152,9 @@
                 <li>
                     <button>
                         <div class = "icon-menu">
-
+                            <svg>
+                                <use xlink:href="img/icons/icons.svg#tickets_related--ticket"></use>
+                            </svg>
                         </div>
                         <span class = "label-menu">
                             As minhas viagens
@@ -152,7 +164,9 @@
                 <li>
                     <button>
                         <div class = "icon-menu">
-
+                            <svg>
+                                <use xlink:href="img/icons/icons.svg#check-in--check-in"></use>
+                            </svg>
                         </div>
                         <span class = "label-menu">
                             Check-in
@@ -162,7 +176,9 @@
                 <li>
                     <button>
                         <div class = "icon-menu">
-
+                            <svg>
+                                <use xlink:href="img/icons/icons.svg#plane_related--world_tracker"></use>
+                            </svg>
                         </div>
                         <span class = "label-menu">
                             Estado do voo
