@@ -541,27 +541,90 @@ header {
     }
 }
 
-h6 {
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    color: #2c2c2c;
-    width: 100%;
-    text-align: left;
-    position: relative;
-    padding: 32px 0px 16px 0px;
-}
 
 .footer-links-container {
     display:flex;
     flex-direction: row;
-    flex-wrap: wrap;
 
-    ul {
-        list-style: none;
+    border-top: 1px solid #eee;
+
+    max-width: 1188px;
+    margin: auto;
+
+    & div {
+        
+        padding: 0px 10px;
+        width: 16%;
+
+        &:nth-child(4){
+            width: 25%;
+        }
+        &:last-child{
+            width: 25%;
+        }
+
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            
+            
+            li{
+                color: #2c2c2c;
+                font-size: 0.875rem;
+
+                &:hover{
+
+                    a{
+                        opacity: 0.5;
+                    }
+                }
+
+                &:not(:first-child){
+                    padding: 0px 0px 8px;
+                } 
+
+                a{
+                    text-decoration: none;
+                    color: #2c2c2c;
+                    display: block;
+                    width: 100%;
+                    
+                }
+    
+                h6{
+                    margin: 0;
+                    padding: 32px 0px 16px;
+
+                    font-weight: 700;
+                    font-size: 1rem;
+                    color: #2c2c2c;
+
+                }
+    
+                .link-verde{
+                    color: #127045;
+                    text-decoration: underline
+                }
+
+                span{
+                    color: #2c2c2c;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        div{
+            width: 100%;
+        }
+ 
     }
 
-    border-top: 1px solid #eee
+
+    
+
+
 }
 
 
@@ -573,15 +636,25 @@ h6 {
 
 // Footer
 footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
+   
     background-color: #f5f5f5;
     padding: 32px 0px 16px;
-    font-weight: normal;
-    font-size: 0.875rem
+   
  
+
+    & .footer-container {
+
+        max-width: 1188px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+
+        font-weight: normal;
+        font-size: 0.875rem;
+        color: #666;
+        }
+
     }
 
 
