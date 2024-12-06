@@ -199,11 +199,51 @@ header {
                     }
                 }
             }
+
+            &.login {
+                position: relative;
+                display: flex;
+                width: auto;
+                margin: auto 0;
+                margin-left: auto;
+
+                
+                img {
+                    position: relative;
+                    height: 24px;
+
+                    &:first-child {
+                        display: none;
+                    }
+
+                    @media screen and (max-width: 1150px) {
+                        height: 40px;
+                    }
+                }
+                
+                span {
+                    position: relative;
+                    margin: auto;
+                    font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
+                    font-size: .875rem;
+                    font-weight: 700;
+                    margin-left: 10px;
+                    
+                    &::after {
+                        @include animacaoBorda(1px, white);
+                        bottom: -5px;
+                    }
+
+                    @media screen and (min-width: 1024px) and (max-width: 1150px) {
+                        display: none;
+                    }
+                }
+
+            }
     
             &:last-child {
                 position: relative;
                 margin: auto 1%;
-                margin-left: auto;
                 width: 8px;
                 height: 8px;
                 background-color: #72be44;
@@ -228,6 +268,18 @@ header {
         li {
             &:not(:first-child) > span::after {
                 background-color: #127045;
+            }
+
+
+            &.login {
+                img {
+                    display: none;
+
+                    &:first-child {
+                        display: block;
+                    }
+                }
+                
             }
         }
     }
@@ -357,7 +409,7 @@ header {
         height: 10px;
         margin-bottom: 10px;
         
-        & div {
+        div {
             position: relative;
             background-color: rgba(255, 255, 255, 0.6);
             border-radius: 50%;
@@ -368,7 +420,7 @@ header {
             transition: width 0.2s ease-in-out;
         }
         
-        & .active {
+        .active {
             background-color: white;
             width: 20px;
             border-radius: 4px;
@@ -514,6 +566,58 @@ header {
             }
         }
 
+        .main-menu-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+
+            .main-menu-header {
+                display: flex;
+                flex-direction: row;
+                list-style: none; 
+                margin: 0;
+                padding: 15px 20px;
+                
+                li {
+                    ul {
+                        padding: 4px 0px;
+                        list-style: none;
+                        display: flex;
+                        flex-direction: row;
+
+                        li {
+                            font-family: Montserrat, Montserrat-local-backup, Arial, Helvetica, sans-serif;
+                            font-size: 13px;
+                            font-weight: 700;
+                            width: auto;
+                            margin: 0 4px;
+                            padding: 8px 14px;
+                            border-radius: 40px;
+                            text-align: center;
+                            background-color: #ededed;
+                            color: black;
+                            cursor: pointer;
+
+                            &:not(.active):hover {
+                                color: #127045;
+                            }
+
+                            &.active {
+                                color: white;
+                                background-color: #127045;
+                            }
+                        }
+                    }
+
+                    input[type=checkbox] {
+                        position: relative;
+                        margin: 4px 0;
+                        height: 22px;
+                        width: 22px;
+                    }
+                }
+            }
+        }
     }
 }
     
@@ -568,8 +672,6 @@ header {
             margin: 0;
             padding: 0;
 
-            
-            
             li{
                 color: #2c2c2c;
                 font-size: 0.875rem;
@@ -618,44 +720,22 @@ header {
         div{
             width: 100%;
         }
- 
     }
-
-
-    
-
-
 }
-
-
-
-
-
-
-
 
 // Footer
 footer {
-   
     background-color: #f5f5f5;
     padding: 32px 0px 16px;
-   
  
-
-    & .footer-container {
-
+    .footer-container {
         max-width: 1188px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin: auto;
-
         font-weight: normal;
         font-size: 0.875rem;
         color: #666;
-        }
-
     }
-
-
-
+}

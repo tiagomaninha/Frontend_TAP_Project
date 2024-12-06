@@ -190,10 +190,53 @@ header {
     display: none;
   }
 }
+.main-header ul li.login {
+  position: relative;
+  display: flex;
+  width: auto;
+  margin: auto 0;
+  margin-left: auto;
+}
+.main-header ul li.login img {
+  position: relative;
+  height: 24px;
+}
+.main-header ul li.login img:first-child {
+  display: none;
+}
+@media screen and (max-width: 1150px) {
+  .main-header ul li.login img {
+    height: 40px;
+  }
+}
+.main-header ul li.login span {
+  position: relative;
+  margin: auto;
+  font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-left: 10px;
+}
+.main-header ul li.login span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -3px;
+  left: 50%;
+  background-color: white;
+  border-radius: 20px;
+  transition: width 0.3s ease, left 0.3s ease;
+  bottom: -5px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1150px) {
+  .main-header ul li.login span {
+    display: none;
+  }
+}
 .main-header ul li:last-child {
   position: relative;
   margin: auto 1%;
-  margin-left: auto;
   width: 8px;
   height: 8px;
   background-color: #72be44;
@@ -211,6 +254,12 @@ header {
 
 .fixed ul li:not(:first-child) > span::after {
   background-color: #127045;
+}
+.fixed ul li.login img {
+  display: none;
+}
+.fixed ul li.login img:first-child {
+  display: block;
 }
 
 /* BACKGROUND */
@@ -465,6 +514,50 @@ header {
   border-radius: 2px;
   top: -5px;
   animation: animacaoLinha 0.2s forwards;
+}
+.info-container .info .main-menu-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.info-container .info .main-menu-container .main-menu-header {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 15px 20px;
+}
+.info-container .info .main-menu-container .main-menu-header li ul {
+  padding: 4px 0px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.info-container .info .main-menu-container .main-menu-header li ul li {
+  font-family: Montserrat, Montserrat-local-backup, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  width: auto;
+  margin: 0 4px;
+  padding: 8px 14px;
+  border-radius: 40px;
+  text-align: center;
+  background-color: #ededed;
+  color: black;
+  cursor: pointer;
+}
+.info-container .info .main-menu-container .main-menu-header li ul li:not(.active):hover {
+  color: #127045;
+}
+.info-container .info .main-menu-container .main-menu-header li ul li.active {
+  color: white;
+  background-color: #127045;
+}
+.info-container .info .main-menu-container .main-menu-header li input[type=checkbox] {
+  position: relative;
+  margin: 4px 0;
+  height: 22px;
+  width: 22px;
 }
 
 @keyframes animacaoIcones {

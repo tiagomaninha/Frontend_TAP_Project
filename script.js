@@ -5,10 +5,6 @@ let botoesMenu = document.querySelectorAll(".multi-menu-container button")
 let currentSlide = 0;
 const totalSlides = slides.length - 1;
 
-slides.forEach((slide) => {
-    slide.style.transition = "none";
-});
-
 function moveSlide() {
     slides.forEach((slide) => {
         slide.style.transition = "transform 0.5s ease-in-out";
@@ -41,7 +37,7 @@ setInterval(() => {
     
     elementoAtivo.classList.remove("active")
     botoesSlides[slide].classList.toggle("active")
-}, 20 * 1000); // 30 segundos
+}, 30 * 1000); // 30 segundos
 
 function changeSlide(n) {
     let elementoAtivo = document.querySelector(".dots-container .active")
