@@ -576,15 +576,19 @@ header {
                 flex-direction: row;
                 list-style: none; 
                 margin: 0;
-                padding: 15px 20px;
-                
+                padding: 15px 20px;            
+            
                 li {
+                    display: flex;
+                    align-items: center; 
+                    margin: 0 10px 0 0;
+            
                     ul {
                         padding: 4px 0px;
                         list-style: none;
                         display: flex;
                         flex-direction: row;
-
+            
                         li {
                             font-family: Montserrat, Montserrat-local-backup, Arial, Helvetica, sans-serif;
                             font-size: 13px;
@@ -597,26 +601,66 @@ header {
                             background-color: #ededed;
                             color: black;
                             cursor: pointer;
-
+            
                             &:not(.active):hover {
                                 color: #127045;
                             }
-
+            
                             &.active {
                                 color: white;
                                 background-color: #127045;
                             }
                         }
                     }
-
-                    input[type=checkbox] {
+            
+                    .custom-checkbox {
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                        user-select: NONE;
+                        font-family: Lato, Lato-local-backup, Roboto, Arial, Helvetica, sans-serif;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #2c2c2c;
+                    }
+                      
+                    .custom-checkbox input[type="checkbox"] {
+                        display: none;
+                    }
+                      
+                    .custom-checkbox .checkmark {
                         position: relative;
-                        margin: 4px 0;
-                        height: 22px;
                         width: 22px;
+                        height: 22px;
+                        border: 1px solid #dbdbdb;
+                        border-radius: 2px;
+                        background-color: white;
+                        margin-right: 10px;
+                        transition: background-color 0.2s ease, border-color 0.2s ease;
+                    }
+                      
+                    .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+                        background-color: #127045;
+                    }
+                      
+                    .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+                        content: "";
+                        position: absolute;
+                        top: 45%;
+                        left: 50%;
+                        width: 5px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 2px 2px 0;
+                        transform: translate(-50%, -50%) rotate(45deg);
+                    }
+
+                    &:last-child {
+                        margin-left: auto;
                     }
                 }
-            }
+
+            }            
         }
     }
 }
