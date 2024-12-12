@@ -19,13 +19,6 @@ header {
     min-height: 55px;
   }
 }
-.fixed {
-  position: fixed;
-  background-color: white;
-  color: black;
-  z-index: 10;
-}
-
 .top-header {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -190,6 +183,19 @@ header {
     display: none;
   }
 }
+.main-header ul li.sandwich-menu {
+  display: none;
+  padding: 10px 5px;
+  margin: auto 0;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .main-header ul li.sandwich-menu {
+    display: block;
+    order: 3;
+  }
+}
 .main-header ul li.login {
   position: relative;
   display: flex;
@@ -199,14 +205,29 @@ header {
 }
 .main-header ul li.login img {
   position: relative;
+  margin: auto;
   height: 24px;
 }
-.main-header ul li.login img:first-child {
+.main-header ul li.login img:not(:nth-child(2)) {
   display: none;
 }
 @media screen and (max-width: 1150px) {
   .main-header ul li.login img {
     height: 40px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main-header ul li.login {
+    padding: 0 10px;
+    order: 2;
+    margin: auto 0;
+  }
+  .main-header ul li.login img:first-child {
+    display: block;
+    margin: 0;
+  }
+  .main-header ul li.login #imgUser {
+    display: none;
   }
 }
 .main-header ul li.login span {
@@ -229,7 +250,7 @@ header {
   transition: width 0.3s ease, left 0.3s ease;
   bottom: -5px;
 }
-@media screen and (min-width: 1024px) and (max-width: 1150px) {
+@media screen and (max-width: 1150px) {
   .main-header ul li.login span {
     display: none;
   }
@@ -251,15 +272,48 @@ header {
   height: 17px;
   width: 17px;
 }
+.main-header ul li:last-child img:last-child {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .main-header ul li:last-child {
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0 10px;
+    width: 40px;
+    height: 40px;
+  }
+  .main-header ul li:last-child img:last-child {
+    color: rgba(0, 0, 0, 0.7764705882);
+    display: block;
+    width: 35px;
+    height: 35px;
+  }
+  .main-header ul li:last-child img:first-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main-header ul li:last-child {
+    margin-left: auto;
+    display: block;
+  }
+}
 
+.fixed {
+  position: fixed;
+  background-color: white;
+  color: black;
+  z-index: 10;
+}
 .fixed ul li:not(:first-child) > span::after {
   background-color: #127045;
 }
-.fixed ul li.login img {
-  display: none;
-}
-.fixed ul li.login img:first-child {
+.fixed ul li.login #imgUserVerde {
   display: block;
+}
+.fixed ul li.login #imgUser {
+  display: none;
 }
 
 /* BACKGROUND */
@@ -530,7 +584,7 @@ header {
 .info-container .info .main-menu-container .main-menu-header li {
   display: flex;
   align-items: center;
-  margin: 0 10px 0 0;
+  margin: 0 25px 0 0;
 }
 .info-container .info .main-menu-container .main-menu-header li ul {
   padding: 4px 0px;
@@ -562,9 +616,9 @@ header {
   display: flex;
   align-items: center;
   cursor: pointer;
-  -webkit-user-select: NONE;
-     -moz-user-select: NONE;
-          user-select: NONE;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   font-family: Lato, Lato-local-backup, Roboto, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;

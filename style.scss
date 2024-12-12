@@ -33,13 +33,6 @@ header {
     }
 }
 
-.fixed {
-    position: fixed;
-    background-color: white;
-    color: black;
-    z-index: 10;
-}
-
 .top-header {
     user-select: none;
     margin: 0;
@@ -199,6 +192,19 @@ header {
                     }
                 }
             }
+            
+            &.sandwich-menu {
+                display: none;
+                padding: 10px 5px; // aumento a altura do header aqui em 10px
+                margin: auto 0;
+                color: rgba(0, 0, 0, 0.6);
+                font-size: 40px;
+
+                @media screen and (max-width: 1024px) {
+                    display: block;
+                    order: 3;
+                }
+            }
 
             &.login {
                 position: relative;
@@ -206,13 +212,14 @@ header {
                 width: auto;
                 margin: auto 0;
                 margin-left: auto;
-
+                
                 
                 img {
                     position: relative;
+                    margin: auto;
                     height: 24px;
-
-                    &:first-child {
+                    
+                    &:not(:nth-child(2)) {
                         display: none;
                     }
 
@@ -220,6 +227,22 @@ header {
                         height: 40px;
                     }
                 }
+                
+                @media screen and (max-width: 1024px) {
+                    padding: 0 10px;
+                    order: 2;
+                    margin: auto 0;
+
+                    img:first-child {
+                        display: block;
+                        margin: 0;
+                    }
+
+                    #imgUser {
+                        display: none;
+                    }
+                }
+                
                 
                 span {
                     position: relative;
@@ -234,7 +257,7 @@ header {
                         bottom: -5px;
                     }
 
-                    @media screen and (min-width: 1024px) and (max-width: 1150px) {
+                    @media screen and (max-width: 1150px) {
                         display: none;
                     }
                 }
@@ -249,7 +272,7 @@ header {
                 background-color: #72be44;
                 box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.2);
                 border-radius: 50%;
-    
+                
                 img {
                     position: absolute;
                     top:50%;
@@ -258,26 +281,58 @@ header {
                     height: 17px;
                     width: 17px;
                 }
+
+                img:last-child {
+                    display: none;
+                }
+
+                @media screen and (max-width: 1024px) {
+                    box-shadow: none;
+                    background-color: transparent;
+                    padding: 0 10px;
+                    width: 40px;
+                    height: 40px;
+                    
+                    img:last-child {
+                        color: #000000c6;
+                        display: block;
+                        width: 35px;
+                        height: 35px;
+                    }
+
+                    img:first-child {
+                        display: none;
+                    }
+                }
+
+                @media screen and (max-width: 1024px) {
+                    margin-left: auto;
+                    display: block;
+                }
             }
         }
     }
 }
 
 .fixed {
+    position: fixed;
+    background-color: white;
+    color: black;
+    z-index: 10;
+
     ul {
         li {
             &:not(:first-child) > span::after {
                 background-color: #127045;
             }
 
-
             &.login {
-                img {
-                    display: none;
+                #imgUserVerde {
+                    display: block;
+                }
 
-                    &:first-child {
-                        display: block;
-                    }
+                #imgUser {
+                    display: none;
                 }
                 
             }
@@ -581,7 +636,7 @@ header {
                 li {
                     display: flex;
                     align-items: center; 
-                    margin: 0 10px 0 0;
+                    margin: 0 25px 0 0;
             
                     ul {
                         padding: 4px 0px;
@@ -617,7 +672,7 @@ header {
                         display: flex;
                         align-items: center;
                         cursor: pointer;
-                        user-select: NONE;
+                        user-select: none;
                         font-family: Lato, Lato-local-backup, Roboto, Arial, Helvetica, sans-serif;
                         font-size: 16px;
                         font-weight: 400;
