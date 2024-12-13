@@ -745,82 +745,145 @@ header {
 }
 
 
+
+
+
+
+
+
+
+
 .footer-links-container {
-    display:flex;
-    flex-direction: row;
 
     border-top: 1px solid #eee;
 
-    max-width: 1188px;
-    margin: auto;
-
-    & div {
+    .footer-links{
         
-        padding: 0px 10px;
-        width: 16%;
+        display:flex;
+        flex-direction: row;
+        max-width: 1188px;
+        margin: auto;
+    
+        & > div {
+            
+            padding: 0px 10px;
+            width: 16%;
+    
+            &:nth-child(4){
+                width: 25%;
+            }
+            &:last-child{
+                width: 25%;
+            }
+    
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+    
 
-        &:nth-child(4){
-            width: 25%;
-        }
-        &:last-child{
-            width: 25%;
-        }
 
-        ul{
-            list-style: none;
-            margin: 0;
-            padding: 0;
+                li{
+                    color: #2c2c2c;
+                    font-size: 0.875rem;
 
-            li{
-                color: #2c2c2c;
-                font-size: 0.875rem;
+                    p{
+                        margin-top: 0px;
+                        margin-bottom: 23px;
+                        font-size: 16px;
 
-                &:hover{
-
+                        .italico{
+                            font-weight: 400;
+                            font-style: italic;
+                            font-size: 13px;
+                        }
+                    }
+    
+                    &:hover{
+    
+                        a{
+                            opacity: 0.5;
+                        }
+                    }
+    
+                    &:not(:first-child){
+                        padding: 0px 0px 8px;
+                    } 
+    
                     a{
-                        opacity: 0.5;
+                        text-decoration: none;
+                        color: #2c2c2c;
+                        display: block;
+                        width: 100%;
+                        
+                        
+                    }
+        
+                    h6{
+                        margin: 0;
+                        padding: 32px 0px 16px;
+    
+                        font-weight: 700;
+                        font-size: 1rem;
+                        color: #2c2c2c;
+    
+                    }
+        
+                    .link-verde{
+                        color: #127045;
+                        text-decoration: underline;
+                        margin-bottom: 16px;
+
+                        &.grande{
+                            font-size:16px;
+                        }
+                    }
+    
+                    span{
+                        color: #2c2c2c;
+                        font-weight: bold;
+                    }
+
+                }
+                
+            }
+            
+            .images-flexrow{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: calc( 100% - 40px);
+                
+                img{
+                    margin: 0px 16px 16px 0px;
+                }
+            }
+
+            .img-tapapp{
+                display: flex;
+                flex-direction: row;
+                
+                li{
+                    img{
+                        height: 32px;
+                        margin: 0px 12px 0px 0px;
                     }
                 }
+            }
+        
+            div{
+                width: 100%;
+            }
 
-                &:not(:first-child){
-                    padding: 0px 0px 8px;
-                } 
-
-                a{
-                    text-decoration: none;
-                    color: #2c2c2c;
-                    display: block;
-                    width: 100%;
-                    
-                }
-    
-                h6{
-                    margin: 0;
-                    padding: 32px 0px 16px;
-
-                    font-weight: 700;
-                    font-size: 1rem;
-                    color: #2c2c2c;
-
-                }
-    
-                .link-verde{
-                    color: #127045;
-                    text-decoration: underline
-                }
-
-                span{
-                    color: #2c2c2c;
-                    font-weight: bold;
+            &:first-child{
+                img{
+                    width: 120px;
                 }
             }
         }
-
-        div{
-            width: 100%;
-        }
     }
 }
+
 
 // Footer
 footer {
@@ -836,5 +899,9 @@ footer {
         font-weight: normal;
         font-size: 0.875rem;
         color: #666;
+
+        a:hover{
+            opacity: 0.5;
+        }
     }
 }

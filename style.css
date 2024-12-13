@@ -678,60 +678,96 @@ header {
   }
 }
 .footer-links-container {
+  border-top: 1px solid #eee;
+}
+.footer-links-container .footer-links {
   display: flex;
   flex-direction: row;
-  border-top: 1px solid #eee;
   max-width: 1188px;
   margin: auto;
 }
-.footer-links-container div {
+.footer-links-container .footer-links > div {
   padding: 0px 10px;
   width: 16%;
 }
-.footer-links-container div:nth-child(4) {
+.footer-links-container .footer-links > div:nth-child(4) {
   width: 25%;
 }
-.footer-links-container div:last-child {
+.footer-links-container .footer-links > div:last-child {
   width: 25%;
 }
-.footer-links-container div ul {
+.footer-links-container .footer-links > div ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.footer-links-container div ul li {
+.footer-links-container .footer-links > div ul li {
   color: #2c2c2c;
   font-size: 0.875rem;
 }
-.footer-links-container div ul li:hover a {
+.footer-links-container .footer-links > div ul li p {
+  margin-top: 0px;
+  margin-bottom: 23px;
+  font-size: 16px;
+}
+.footer-links-container .footer-links > div ul li p .italico {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 13px;
+}
+.footer-links-container .footer-links > div ul li:hover a {
   opacity: 0.5;
 }
-.footer-links-container div ul li:not(:first-child) {
+.footer-links-container .footer-links > div ul li:not(:first-child) {
   padding: 0px 0px 8px;
 }
-.footer-links-container div ul li a {
+.footer-links-container .footer-links > div ul li a {
   text-decoration: none;
   color: #2c2c2c;
   display: block;
   width: 100%;
 }
-.footer-links-container div ul li h6 {
+.footer-links-container .footer-links > div ul li h6 {
   margin: 0;
   padding: 32px 0px 16px;
   font-weight: 700;
   font-size: 1rem;
   color: #2c2c2c;
 }
-.footer-links-container div ul li .link-verde {
+.footer-links-container .footer-links > div ul li .link-verde {
   color: #127045;
   text-decoration: underline;
+  margin-bottom: 16px;
 }
-.footer-links-container div ul li span {
+.footer-links-container .footer-links > div ul li .link-verde.grande {
+  font-size: 16px;
+}
+.footer-links-container .footer-links > div ul li span {
   color: #2c2c2c;
   font-weight: bold;
 }
-.footer-links-container div div {
+.footer-links-container .footer-links > div .images-flexrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: calc(100% - 40px);
+}
+.footer-links-container .footer-links > div .images-flexrow img {
+  margin: 0px 16px 16px 0px;
+}
+.footer-links-container .footer-links > div .img-tapapp {
+  display: flex;
+  flex-direction: row;
+}
+.footer-links-container .footer-links > div .img-tapapp li img {
+  height: 32px;
+  margin: 0px 12px 0px 0px;
+}
+.footer-links-container .footer-links > div div {
   width: 100%;
+}
+.footer-links-container .footer-links > div:first-child img {
+  width: 120px;
 }
 
 footer {
@@ -747,4 +783,7 @@ footer .footer-container {
   font-weight: normal;
   font-size: 0.875rem;
   color: #666;
+}
+footer .footer-container a:hover {
+  opacity: 0.5;
 }/*# sourceMappingURL=style.css.map */
