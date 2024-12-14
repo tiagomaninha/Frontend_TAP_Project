@@ -94,3 +94,4 @@ botoesMenu.forEach((botao) => {
         console.log("aqui", event.target.parentElement)
     })
 });
+

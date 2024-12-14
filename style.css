@@ -433,6 +433,11 @@ header {
   height: 10px;
   margin-bottom: 10px;
 }
+.info-container .dots-container .active {
+  background-color: white;
+  width: 20px;
+  border-radius: 4px;
+}
 .info-container .dots-container div {
   position: relative;
   background-color: rgba(255, 255, 255, 0.6);
@@ -442,11 +447,6 @@ header {
   cursor: pointer;
   margin-left: 10px;
   transition: width 0.2s ease-in-out;
-}
-.info-container .dots-container .active {
-  background-color: white;
-  width: 20px;
-  border-radius: 4px;
 }
 @media screen and (max-width: 1024px) {
   .info-container .dots-container {
@@ -654,6 +654,54 @@ header {
 .info-container .info .main-menu-container .main-menu-header li:last-child {
   margin-left: auto;
 }
+.info-container .info .main-menu-container .main-menu-options {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+.info-container .info .main-menu-container .main-menu-options .main-options {
+  display: grid;
+  grid-template-columns: 32% auto 32%;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+.info-container .info .main-menu-container .main-menu-options .main-options .option {
+  min-height: 70px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid #ededed;
+}
+.info-container .info .main-menu-container .main-menu-options .main-options .option label {
+  display: block;
+  margin: 10px 22px 5px 22px;
+  color: rgba(0, 0, 0, 0.6039215686);
+}
+.info-container .info .main-menu-container .main-menu-options .main-options .option .input-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 22px 22px 22px;
+}
+.info-container .info .main-menu-container .main-menu-options .main-options .option .input-container div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 22px;
+  color: white;
+  font-weight: 700;
+  padding: 0 5px;
+  margin-right: 10px;
+  background-color: #127045;
+  border-radius: 2px;
+}
+.info-container .info .main-menu-container .main-menu-options .main-options .option .input-container input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: Lato, Lato-local-backup, Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
 
 @keyframes animacaoIcones {
   0% {
@@ -685,6 +733,7 @@ header {
   flex-direction: row;
   max-width: 1188px;
   margin: auto;
+  padding: 0 2%;
 }
 .footer-links-container .footer-links > div {
   padding: 0px 10px;
@@ -750,7 +799,7 @@ header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: calc(100% - 40px);
+  width: 200px;
 }
 .footer-links-container .footer-links > div .images-flexrow img {
   margin: 0px 16px 16px 0px;
