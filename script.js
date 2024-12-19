@@ -95,3 +95,28 @@ botoesMenu.forEach((botao) => {
     })
 });
 
+
+let botoes = document.querySelectorAll(".footer-links div button")
+console.log(botoes)
+for(let i=0; i<botoes.length; i++){
+
+    botoes[i].addEventListener("click",function(){
+        let lista = this.nextElementSibling
+       
+
+        if(lista.classList.contains("desaparecer")){
+            lista.classList.remove("desaparecer")
+        }
+        else{
+            lista.classList.add("desaparecer")
+        }
+
+    })
+
+
+}
+
+
+
+
+
