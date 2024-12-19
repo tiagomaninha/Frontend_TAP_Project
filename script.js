@@ -3,6 +3,7 @@ let slides = document.querySelectorAll(".slide");
 let botoesSlides = document.querySelectorAll(".dots-container div")
 let botoesMenu = document.querySelectorAll(".multi-menu-container button")
 let currentSlide = 0;
+let currentMenu = 1;
 const totalSlides = slides.length - 1;
 
 function moveSlide() {
@@ -97,13 +98,11 @@ botoesMenu.forEach((botao) => {
 
 
 let botoes = document.querySelectorAll(".footer-links div button")
-console.log(botoes)
-for(let i=0; i<botoes.length; i++){
 
+for(let i=0; i<botoes.length; i++){
     botoes[i].addEventListener("click",function(){
         let lista = this.nextElementSibling
        
-
         if(lista.classList.contains("desaparecer")){
             lista.classList.remove("desaparecer")
         }
@@ -112,11 +111,10 @@ for(let i=0; i<botoes.length; i++){
         }
 
     })
-
-
 }
 
-
-
-
-
+function changeMenu(menu) {
+    document.getElementById("menu" + currentMenu).style.display = "none"
+    document.getElementById("menu" + menu).style.display = "block"
+    currentMenu = menu
+}
