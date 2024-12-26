@@ -307,7 +307,7 @@ header {
   z-index: 10;
 }
 .fixed ul li:not(:first-child) > span::after {
-  background-color: #127045;
+  background-color: pink;
 }
 .fixed ul li.login #imgUserVerde {
   display: block;
@@ -786,41 +786,102 @@ header {
     width: 20px;
   }
 }
-.star-alliance-container {
+.reservas {
+  max-width: 1188px;
+  margin: 16px auto;
+  padding: 0 2%;
+}
+.reservas div {
+  padding: 30px 0;
+}
+.reservas div ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  padding: 8px 0px;
+  margin: 0px;
+  border: solid 1px #eee;
+  border-radius: 10px;
 }
-.star-alliance-container img {
-  height: 174.48px;
-  width: 1140px;
+.reservas div ul li {
+  list-style: none;
+  width: 100%;
+  padding: 8px;
+  text-align: center;
 }
-.star-alliance-container p {
-  margin-bottom: 20px;
-  margin-top: 5px;
-  color: #4A4A4A;
-  font: 16px;
+.reservas div ul li:hover a {
+  color: #127045;
+  text-decoration: underline;
+}
+.reservas div ul li:hover a div {
+  background-color: #127045;
+}
+.reservas div ul li:not(:last-child) {
+  border-right: solid 1px #eee;
+}
+.reservas div ul li a {
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+  color: #2c2c2c;
+  font-size: 14px;
+  font-weight: 600;
+}
+.reservas div ul li a div {
+  transition: background-color 0.2s ease-in;
+  padding: 0px;
+  margin: 0 auto;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  background-color: #eee;
+}
+.reservas div ul li:last-child {
+  text-align: center;
+  margin: auto;
+  width: 75%;
+}
+.reservas div ul li:last-child a {
+  color: #127045;
 }
 
-.patrocinadores {
-  margin-bottom: 16px;
+.star-alliance-container {
+  max-width: 1140px;
+  margin: 0px auto;
+  padding: 0 2%;
 }
-.patrocinadores ul {
+.star-alliance-container a img {
+  width: 100%;
+}
+.star-alliance-container p {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  color: #4A4A4A;
+  font-size: 16px;
+}
+
+.premios {
+  margin-bottom: 16px;
+  margin: auto;
+  max-width: 1140px;
+  padding: 0 2%;
+}
+.premios ul {
   list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
   margin: auto;
   padding: 0px;
+  width: 100%;
 }
-.patrocinadores ul li {
-  margin: 16px 0px;
+.premios ul li {
+  margin: 32px auto;
 }
-.patrocinadores ul li img {
+.premios ul li a img {
   height: 50px;
-  margin: 0px 32px;
+  padding: 0px 16px;
 }
-.patrocinadores ul li img:hover {
+.premios ul li img:hover {
   opacity: 0.5;
 }
 

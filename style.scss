@@ -323,7 +323,7 @@ header {
     ul {
         li {
             &:not(:first-child) > span::after {
-                background-color: #127045;
+                background-color: pink  ;
             }
 
             &.login {
@@ -839,6 +839,8 @@ header {
                             color: white;
                         }
 
+
+
                         svg {
                             fill: white;
                         }
@@ -873,29 +875,109 @@ header {
     }
 }
 
-.star-alliance-container{
+.reservas{
+    max-width: 1188px;
+    margin: 16px auto;
+    padding: 0 2%;
 
-    display: flex;
-    flex-direction: column;
+    div{
+        
+        padding: 30px 0;
 
-    align-items: center;
+        ul{
+            display: flex;
+            flex-direction: row;
+            padding: 8px 0px;
+            margin: 0px;
+            
+            border: solid 1px #eee;
+            border-radius: 10px;
 
-    img{
-        height: 174.48px;
-        width: 1140px;
-    }
+    
+            li{
+                list-style: none;
+                width: 100%;
+                padding: 8px;
+                text-align: center;
 
-    p{
-        margin-bottom: 20px;
-        margin-top: 5px;
-        color: #4A4A4A;
-        font: 16px;
+                
+                &:hover{
+                    a{
+                        color: #127045;
+                        text-decoration: underline;
+
+                        div{
+                            background-color: #127045;
+                        }
+                    }
+                }
+
+                &:not(:last-child){
+                    border-right: solid 1px #eee;
+                }
+ 
+                a{
+                    transition: all 0.2s ease-in;
+
+                    text-decoration: none;
+                    color: #2c2c2c;
+                    font-size: 14px;
+                    font-weight: 600;
+                    
+
+                    div{
+                        transition: background-color 0.2s ease-in;
+
+                        padding: 0px;
+                        margin: 0 auto;
+                        height: 34px;
+                        width: 34px;
+                        border-radius: 50%;
+                        background-color: #eee;
+
+                    }
+                }
+
+                &:last-child{
+                    text-align: center;
+                    margin: auto;
+                    width: 75%;
+                    a{
+                        color: #127045;
+
+                    }
+                }
+            }
+        }
     }
 }
 
-.patrocinadores{
+.star-alliance-container{
+
+    max-width: 1140px;
+    margin: 0px auto;
+    padding: 0 2%;
+
+    a{       
+        img{
+            width: 100%;  
+        }
+    }
+
+    p{
+        margin-bottom: 10px;
+        margin-top: 5px;
+        color: #4A4A4A;
+        font-size: 16px;
+    }
+}
+
+.premios{
 
     margin-bottom: 16px;
+    margin: auto;
+    max-width: 1140px;
+    padding: 0 2%;
 
     ul{
         list-style: none;
@@ -903,17 +985,22 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        flex-wrap: wrap;
 
         margin: auto;
         padding: 0px;
 
+        width: 100%;
+
         li{
 
-            margin: 16px 0px;
+            margin: 32px auto;
 
-            img{
-                height: 50px;
-                margin: 0px 32px;
+            a{
+                img{
+                    height: 50px;
+                    padding: 0px 16px;
+                }
             }
 
             img:hover{
@@ -978,6 +1065,7 @@ header {
                 font-size: 1rem;
                 color: #2c2c2c;
                 user-select: all;
+                
 
                 @media screen and (max-width: 1024px) {
                     user-select: none;
@@ -986,6 +1074,9 @@ header {
                     padding: 16px 0px;
                     margin: 0px;
                     border-top: 1px solid #eee;
+
+                    
+
                 }
 
             }
@@ -1083,7 +1174,6 @@ header {
                 }
 
             }
-
 
             .images-flexrow{
                 display: flex;
