@@ -96,7 +96,6 @@ botoesMenu.forEach((botao) => {
     })
 });
 
-
 let botoes = document.querySelectorAll(".footer-links div button")
 
 for(let i=0; i<botoes.length; i++){

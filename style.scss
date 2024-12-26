@@ -1,7 +1,7 @@
 body {
+    font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
     margin: 0;
     padding: 0;
-    font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
     line-height: 1.2;
 }
 
@@ -17,12 +17,24 @@ body {
     transition: width 0.3s ease, left 0.3s ease;
 }
 
+@mixin animacaoBordaPequena() {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: -1px;
+    left: 0%;
+    background-color: #127045;
+    border-radius: 20px;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
 /* CABECALHO (USANDO OS SELETORES CSS E NAO USANDO O QUE O SASS PERMITE)  */
 
 header {
     position: absolute;
     width: 100%;
-    z-index: 1;
+    z-index: 100;
     color: white;
 }
 
@@ -119,12 +131,12 @@ header {
         }
     }
     
-    ul {
+    & > ul {
         display: flex;
         margin: 0;
         list-style: none;
         padding: 0 1.5%;
-        li {
+        & > li {
             position: relative;
             margin: auto 0;
             padding: 16px;
@@ -134,8 +146,12 @@ header {
                 position: relative;
             }
             
-            &:not(:first-child):hover {
+            &:not(:first-child) > :not(.list-menu-container-center):hover {
                 cursor: pointer;
+            }
+
+            &:not(:first-child):hover > .list-menu-container-center {
+                display: flex;
             }
             
             &:not(:first-child) > span::after {
@@ -309,6 +325,120 @@ header {
                     margin-left: auto;
                     display: block;
                 }
+            }
+
+            .list-menu-container-center {
+                position: fixed;
+                display: none;
+                left: 50%; 
+                padding: 2% 2% 0 2%;
+                max-width: 1188px;
+                transform: translateX(-50%);
+                box-sizing: border-box;
+                z-index: 2;
+                
+                .list-menu-container {
+                    background-color: white;
+                    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+                    border-radius: 8px;
+                    color: #4a4a4a;     
+
+                    .list-menu {
+                        display: flex;
+                        margin: 0 auto;
+                        width: calc(100% - 40px); 
+                        flex-direction: row;
+                        padding: 30px 7px 15px 7px;
+                        box-sizing: border-box; 
+                        color: #4a4a4a;     
+
+                        .list-container {   
+                            margin-right: 20px;
+                            width: 300px;
+                            border-bottom: 1px solid #dbdbdb;
+                            
+                            .list-title {
+                                display: flex;
+                                color: #3a970e;
+                                margin-bottom: 30px;
+                                font-weight: 700;
+                                font-size: 16px;
+        
+                                span {
+                                    margin-left: 10px;
+                                }
+                            }
+            
+                            .list {
+                                padding: 0;
+                                font-size: 14px;
+                                list-style: none;
+                                margin-bottom: 10px;
+                                column-gap: 16px;   
+        
+                                li {
+                                    padding-bottom: 5px;
+                                    margin-bottom: 7px;
+    
+                                    &:hover {
+                                        color: #127045;
+                                        cursor: pointer;
+                                    }
+                                    
+                                    &:hover span::after {
+                                        width: 15px;
+                                        left: 0;
+                                    }
+                                    
+                                    span::after {
+                                        @include animacaoBordaPequena();
+                                    }
+                                }
+        
+                                &.big {
+                                    column-count: 1;
+                                }
+        
+                                &.medium {
+                                    column-count: 2;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+    
+                .requirements-container {
+                    position: relative;
+                    display: flex;
+                    padding: 0 0 25px 27px;
+                    font-size: 14px;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 10px;
+                    }
+
+                    span {
+                        margin: auto 0;
+                    }
+
+                    &:hover {
+                        color: #127045;
+                        cursor: pointer;
+                    }
+                    
+                    &:hover span::after {
+                        width: 15px;
+                        left: 0;
+                    }
+                    
+                    span::after {
+                        @include animacaoBordaPequena();
+                    }
+                }
+                
             }
         }
     }
