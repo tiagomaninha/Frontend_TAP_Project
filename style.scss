@@ -60,6 +60,11 @@ header {
     color: white;
 }
 
+@media screen and (max-width: 1024px)  {
+    .top-header {
+        flex-direction: column;
+    }
+}
 
 .top-header li {
     padding: 8px;
@@ -180,6 +185,26 @@ header {
                 }
             }
         }
+    }
+}
+
+/* Para media queries */
+
+
+@media screen and (max-width: 1024px)  {
+    .mediaquery-sandwich + div {
+        display: none;
+    }
+
+    .active + div {
+        display: flex;
+        flex-direction: column-reverse;
+        position: fixed;
+        overflow: auto;
+        top: 70px;
+        right: 0%;
+        width: 300px;
+        background-color: white;
     }
 }
 
