@@ -58,24 +58,28 @@ function changeSlide(n) {
 window.onscroll = function() {
     let precisoMudarDeImagem = window.innerWidth >= 1024 && window.innerWidth <= 1150 ? true : false;
 
-    fixarHeader(precisoMudarDeImagem)
+    fixarHeader(precisoMudarDeImagem, window.innerWidth)
 };
 
-var blackLogo = document.getElementById("blackLogo");
-var whiteLogo = document.getElementById("whiteLogo");
+var blackLogo = document.querySelector(".main-header #blackLogo");
+var whiteLogo = document.querySelector(".main-header #whiteLogo");
 var mainHeader = document.querySelector(".main-header"); 
 var sticky = mainHeader.offsetTop;
 
-function fixarHeader(bool) {
+function fixarHeader(bool, width) {
     if (window.scrollY > sticky) {
-        mainHeader.classList.add("fixed");
+        if (width > 1024) {
+            mainHeader.classList.add("fixed");
+        }
 
         if (!bool) {
             blackLogo.classList.add("showImage")
             whiteLogo.classList.add("hideImage")
         }
     } else {
-        mainHeader.classList.remove("fixed");
+        if (width > 1024) {
+            mainHeader.classList.remove("fixed");
+        }
 
         if (!bool) {
             blackLogo.classList.remove("showImage")
@@ -116,4 +120,48 @@ function changeMenu(menu) {
     document.getElementById("menu" + currentMenu).style.display = "none"
     document.getElementById("menu" + menu).style.display = "block"
     currentMenu = menu
+}
+
+let sandwich = document.querySelector(".sandwich-menu")
+let liMainHeaderButton = document.querySelectorAll(".header-title")
+let subListTitle = document.querySelectorAll(".list-title")
+
+if (window.innerWidth <= 1024) {
+    sandwich.addEventListener("click", function() {
+        let sandwichMenu = document.querySelector(".mediaquery-sandwich")
+    
+        if (sandwichMenu.classList.contains("active")) {
+            sandwichMenu.classList.remove("active")
+        } else {
+            sandwichMenu.classList.add("active")
+        }
+    })
+
+    liMainHeaderButton.forEach(element => {
+        let pai = element.parentElement
+        element.addEventListener("click", function() {
+            console.log("boas")
+            if (pai.classList.contains("active")) {
+                pai.classList.remove("active")
+            } else {
+                liMainHeaderButton.forEach((title) => {title.parentElement.classList.remove("active")})
+                pai.classList.add("active")
+            }
+        })
+
+        console.log(this)
+    });
+
+    subListTitle.forEach(element => {
+        let pai = element.parentElement
+
+        element.addEventListener("click", function() {
+            if (pai.classList.contains("selected")) {
+                pai.classList.remove("selected")
+            } else {
+                subListTitle.forEach((title) => {title.parentElement.classList.remove("selected")})
+                pai.classList.add("selected")
+            }
+        })
+    })
 }
