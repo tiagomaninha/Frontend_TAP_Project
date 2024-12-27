@@ -1187,10 +1187,55 @@ header {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
-  gap: 16px;
+  gap: 32px;
 }
-.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner img {
-  width: 70px;
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner {
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-img {
+  width: 100px;
+  height: 90px;
+  overflow: hidden;
+}
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.3s all ease-in-out;
+}
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-img img:hover {
+  transform: scale(1.2);
+}
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-let {
+  display: flex;
+  width: 75%;
+}
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-let div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-let div:last-child {
+  text-align: end;
+}
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-let div span {
+  padding: 3px 20px;
+  color: black;
+}
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-let div .muda-letra-2 {
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .star-alliance-container {

@@ -1366,23 +1366,77 @@ header {
     max-width: 1188px;
     margin: auto;
     padding: 0 2%;
-
+    
 
     .ofertas-voos-exemplos-conteiner{
 
         display: grid;
         grid-template-columns: auto auto auto;
         grid-template-rows: auto auto auto;
-        gap: 16px;
-
-
-
+        gap: 32px;
         
-        img{
-            width: 70px;
+
+        .ofertas-voos-conteiner{
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+
+            a{
+                display: flex;
+                flex-direction: row;
+                text-decoration: none;
+                width: 100%;
+                height: 100%;
+
+                .ofertas-voos-conteiner-img{
+                    width: 100px;
+                    height: 90px;
+                    overflow: hidden;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+
+                        transition: 0.3s all ease-in-out;
+
+                        &:hover{
+                            transform: scale(1.2);
+                        } 
+                    } 
+                }
+
+                .ofertas-voos-conteiner-let{
+                    display: flex;
+                    width: 75%;
+
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+                        width: 100%;
+                        
+                        
+
+                        &:last-child{
+                            text-align: end;
+                        }
+
+                        span{
+                            padding: 3px 20px;
+                            color:black
+                        }
+
+                        .muda-letra-2{
+                            font-weight: 700;
+                            font-size: 20px;
+                        }
+
+                    }
+                }
+            }
+
         }
-
-
     }
 
 }
@@ -1414,6 +1468,7 @@ header {
     margin: auto;
     max-width: 1140px;
     padding: 0 2%;
+    
 
     ul{
         list-style: none;
