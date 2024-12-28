@@ -126,42 +126,45 @@ let sandwich = document.querySelector(".sandwich-menu")
 let liMainHeaderButton = document.querySelectorAll(".header-title")
 let subListTitle = document.querySelectorAll(".list-title")
 
-if (window.innerWidth <= 1024) {
-    sandwich.addEventListener("click", function() {
-        let sandwichMenu = document.querySelector(".mediaquery-sandwich")
-    
-        if (sandwichMenu.classList.contains("active")) {
-            sandwichMenu.classList.remove("active")
-        } else {
-            sandwichMenu.classList.add("active")
+sandwich.addEventListener("click", function() {
+        if (window.innerWidth <= 1024) {
+            let sandwichMenu = document.querySelector(".mediaquery-sandwich")
+        
+            if (sandwichMenu.classList.contains("active")) {
+                sandwichMenu.classList.remove("active")
+                sandwich.innerHTML = "&#9776;"
+            } else {
+                sandwichMenu.classList.add("active")
+                sandwich.innerHTML = "&#x2715;"
+            }
         }
     })
 
-    liMainHeaderButton.forEach(element => {
-        let pai = element.parentElement
-        element.addEventListener("click", function() {
-            console.log("boas")
+liMainHeaderButton.forEach(element => {
+    let pai = element.parentElement
+    element.addEventListener("click", function() {
+        if (window.innerWidth <= 1024) {
             if (pai.classList.contains("active")) {
                 pai.classList.remove("active")
             } else {
                 liMainHeaderButton.forEach((title) => {title.parentElement.classList.remove("active")})
                 pai.classList.add("active")
             }
-        })
+        }
+    })
+});
 
-        console.log(this)
-    });
+subListTitle.forEach(element => {
+    let pai = element.parentElement
 
-    subListTitle.forEach(element => {
-        let pai = element.parentElement
-
-        element.addEventListener("click", function() {
+    element.addEventListener("click", function() {
+        if (window.innerWidth <= 1024) {
             if (pai.classList.contains("selected")) {
                 pai.classList.remove("selected")
             } else {
                 subListTitle.forEach((title) => {title.parentElement.classList.remove("selected")})
                 pai.classList.add("selected")
             }
-        })
+        }
     })
-}
+})
