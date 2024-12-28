@@ -200,7 +200,7 @@ header {
 
     @media screen and (max-width: 1024px)  {
         position: relative;
-        margin: auto 0;
+        margin: 0 0 auto 0;
         order: -1; // trocar a ordem (nao usamos flex-direction column-reversed, porque a scrollbar ia ficar ao contrario)
     }
     
@@ -501,6 +501,7 @@ header {
                                 flex-direction: column;
 
                                 .list-container {
+                                    width: 100%;
                                     border: none;
 
                                     img {
@@ -617,7 +618,7 @@ header {
         width: 100%;
         height: 100%;
         transition: transform 0.3s ease-in-out;
-
+        
         .image-boxshadow { 
             &::after { // BOX SHADOW (SOMBRA À VOLTA DA IMAGEM)
                 content: "";
@@ -667,7 +668,6 @@ header {
 
                 p {
                     font-size: 1.125rem;
-                    font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
                     margin: 0;
                 }
             }
@@ -676,7 +676,6 @@ header {
                 position: relative;
                 margin-top: 15px;
                 padding: 10px 40px;
-                font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
                 line-height: 118%;
                 font-weight: 700;
                 padding: 10px 30px;
@@ -1094,8 +1093,6 @@ header {
                             color: white;
                         }
 
-
-
                         svg {
                             fill: white;
                         }
@@ -1163,6 +1160,10 @@ header {
 
                         div{
                             background-color: #127045;
+
+                            svg {
+                                fill: white;
+                            }
                         }
                     }
                 }
@@ -1173,7 +1174,6 @@ header {
  
                 a{
                     transition: all 0.2s ease-in;
-
                     text-decoration: none;
                     color: #2c2c2c;
                     font-size: 14px;
@@ -1181,15 +1181,26 @@ header {
                     
 
                     div{
+                        position: relative;
                         transition: background-color 0.2s ease-in;
-
                         padding: 0px;
                         margin: 0 auto;
-                        height: 34px;
-                        width: 34px;
+                        height: 42px;
+                        width: 42px;
                         border-radius: 50%;
                         background-color: #eee;
 
+                        svg {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 85%;
+                            height: 85%;
+                            object-fit: cover;
+                            fill: #2c2c2c;
+                            transition: fill 0.2s ease-in;
+                        }
                     }
                 }
 
@@ -1303,7 +1314,7 @@ header {
                             padding: 20px;
                             width: 50%;
                             color: white;
-                            font-size: 16px;
+                            font-size: 14px;
                             margin-top: auto;
                             
                             &:last-of-type{
@@ -1316,7 +1327,7 @@ header {
 
                             .muda-letra{
                                 font-weight: 700;
-                                font-size: 20px;
+                                font-size: 18px;
                             }
                         }
                     }
@@ -1338,7 +1349,6 @@ header {
                 border-radius: 50px;
 
                 color: #127045;
-                font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
                 font-weight: 700;
                 font-size: 16px;
                 background-color: #FFFFFF;
@@ -1354,7 +1364,6 @@ header {
                
             a{
                 color: #127045;
-                font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
                 font-size: 16px;
                 font-weight: 700;
                 text-decoration: none;
@@ -1509,59 +1518,82 @@ header {
     .informaçoes-uteis-grid-conteiner{
         display: grid;
         grid-template-columns: minmax(auto, 578px) minmax(auto, 578px);
-        grid-template-rows: minmax(307px, 307px) minmax(52px, 52px) minmax(307px, 307px);
+        grid-template-rows: 310px 52px 310px;
         gap: 32px;
         
-        
-        & > div{
-
+        & > div {
+            
             width: 100%;
             height: 100%;
             position: relative;
             z-index: 2;
-
-            a{
+            
+            & > a {
                 width: 100%;
                 height: 100%;
                 cursor: pointer;
-
+                
                 .info-conteiner-informaçoes-uteis{
-
+                    position: absolute;
                     display: flex;
                     flex-direction: column;             
-                    position: absolute;
-
-                    height: 100%;
-                    width: 100%; 
                     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19%, rgba(0, 0, 0, 0.7) 100%);
+                    width: 100%; 
+                    height: 100%;
                     border-radius: 8px;
-
                     transition: 0.3s all ease-in-out;
-                    z-index: 2;
+                    z-index: 1;
 
                     div{
                         display: flex;
                         align-items: flex-end;
                         padding: 0px 16px 16px 16px;
                         width: 95%;
-
                         font-size: 19px;
                         color: white;
+                        height: auto;
+                        transition: 0.3s all ease-in-out;
 
                         &:first-child{
-                            height: 100%;
+                            margin-top: auto;
                             font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
                             font-weight: 700;
                             font-size: 24px;
                         } 
+
+                        &:last-child {
+                            position: absolute;
+                            width: auto;
+                            opacity: 0;
+                            bottom: 0%;
+                            font-size: 14px;
+
+                            span {
+                                font-size: 16px;
+                                font-weight: 700;
+                                margin-right: 10px;
+                            }
+                        }
                     }
 
                     &:hover{
-                        transform: scale(1.05);
+                        transform: scale(1.01);
+
+                        div:not(:last-child) {
+                            transform: translateY(-35px);
+                        }
+
+                        div:last-child {
+                            opacity:1;
+
+                            &:hover span {
+                                text-decoration: underline;
+                            }
+                        }
                     }
 
                     &:hover+img{
-                        transform: scale(1.05);
+                        transform: scale(1.01);
                     }
                 }
 
@@ -1778,7 +1810,6 @@ header {
                 border:none;
                 outline: none;
                 pointer-events: none;
-                font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
                 font-weight: 700;
                 font-size: 1rem;
                 color: #2c2c2c;
@@ -1792,22 +1823,13 @@ header {
                     padding: 16px 0px;
                     margin: 0px;
                     border-top: 1px solid #eee;
-
-                    
-
                 }
-
             }
 
-
-
-    
             ul{
                 list-style: none;
                 margin: 0;
                 padding: 0;
-    
-
 
                 li{
                     color: #2c2c2c;
@@ -1833,24 +1855,19 @@ header {
                         }
                     }
     
-    
                     a{
                         text-decoration: none;
                         color: #2c2c2c;
                         display: block;
                         width: 100%;
-                        
-                        
                     }
         
                     h6{
                         margin: 0;
                         padding: 32px 0px 16px;
-    
                         font-weight: 700;
                         font-size: 1rem;
                         color: #2c2c2c;
-    
                     }
         
                     .link-verde{
@@ -1890,7 +1907,6 @@ header {
                         padding-top: 16px;
                     }
                 }
-
             }
 
             .images-flexrow{
@@ -1924,7 +1940,6 @@ header {
         }
     }
 }
-
 
 // Footer
 footer {

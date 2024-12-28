@@ -171,7 +171,7 @@ header {
 @media screen and (max-width: 1024px) {
   .main-header {
     position: relative;
-    margin: auto 0;
+    margin: 0 0 auto 0;
     order: -1;
   }
 }
@@ -465,6 +465,7 @@ header {
     flex-direction: column;
   }
   .main-header > ul > li.active .list-menu-container-center .list-menu-container .list-menu .list-container {
+    width: 100%;
     border: none;
   }
   .main-header > ul > li.active .list-menu-container-center .list-menu-container .list-menu .list-container img {
@@ -604,14 +605,12 @@ header {
 }
 .background-container .slide .text-container .text p {
   font-size: 1.125rem;
-  font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
   margin: 0;
 }
 .background-container .slide .text-container button {
   position: relative;
   margin-top: 15px;
   padding: 10px 40px;
-  font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
   line-height: 118%;
   font-weight: 700;
   padding: 10px 30px;
@@ -1031,6 +1030,9 @@ header {
 .reservas div ul li:hover a div {
   background-color: #127045;
 }
+.reservas div ul li:hover a div svg {
+  fill: white;
+}
 .reservas div ul li:not(:last-child) {
   border-right: solid 1px #eee;
 }
@@ -1042,13 +1044,26 @@ header {
   font-weight: 600;
 }
 .reservas div ul li a div {
+  position: relative;
   transition: background-color 0.2s ease-in;
   padding: 0px;
   margin: 0 auto;
-  height: 34px;
-  width: 34px;
+  height: 42px;
+  width: 42px;
   border-radius: 50%;
   background-color: #eee;
+}
+.reservas div ul li a div svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  fill: #2c2c2c;
+  transition: fill 0.2s ease-in;
 }
 .reservas div ul li:last-child {
   text-align: center;
@@ -1139,7 +1154,7 @@ header {
   padding: 20px;
   width: 50%;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: auto;
 }
 .ofertas-voos .ofertas-voos-exem ul li a .text-info-container div:last-of-type {
@@ -1150,7 +1165,7 @@ header {
 }
 .ofertas-voos .ofertas-voos-exem ul li a .text-info-container div .muda-letra {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
 }
 .ofertas-voos .ofertas-voos-mid {
   display: flex;
@@ -1163,7 +1178,6 @@ header {
   border: solid 1px #127045;
   border-radius: 50px;
   color: #127045;
-  font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
   font-weight: 700;
   font-size: 16px;
   background-color: #FFFFFF;
@@ -1176,7 +1190,6 @@ header {
 }
 .ofertas-voos .ofertas-voos-mid div a {
   color: #127045;
-  font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
@@ -1301,7 +1314,7 @@ header {
 .informacoes-uteis .informaçoes-uteis-grid-conteiner {
   display: grid;
   grid-template-columns: minmax(auto, 578px) minmax(auto, 578px);
-  grid-template-rows: minmax(307px, 307px) minmax(52px, 52px) minmax(307px, 307px);
+  grid-template-rows: 310px 52px 310px;
   gap: 32px;
 }
 .informacoes-uteis .informaçoes-uteis-grid-conteiner > div {
@@ -1310,43 +1323,66 @@ header {
   position: relative;
   z-index: 2;
 }
-.informacoes-uteis .informaçoes-uteis-grid-conteiner > div a {
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a {
   width: 100%;
   height: 100%;
   cursor: pointer;
 }
-.informacoes-uteis .informaçoes-uteis-grid-conteiner > div a .info-conteiner-informaçoes-uteis {
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  height: 100%;
-  width: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19%, rgba(0, 0, 0, 0.7) 100%);
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
   transition: 0.3s all ease-in-out;
-  z-index: 2;
+  z-index: 1;
 }
-.informacoes-uteis .informaçoes-uteis-grid-conteiner > div a .info-conteiner-informaçoes-uteis div {
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis div {
   display: flex;
   align-items: flex-end;
   padding: 0px 16px 16px 16px;
   width: 95%;
   font-size: 19px;
   color: white;
+  height: auto;
+  transition: 0.3s all ease-in-out;
 }
-.informacoes-uteis .informaçoes-uteis-grid-conteiner > div a .info-conteiner-informaçoes-uteis div:first-child {
-  height: 100%;
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis div:first-child {
+  margin-top: auto;
   font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 24px;
 }
-.informacoes-uteis .informaçoes-uteis-grid-conteiner > div a .info-conteiner-informaçoes-uteis:hover {
-  transform: scale(1.05);
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis div:last-child {
+  position: absolute;
+  width: auto;
+  opacity: 0;
+  bottom: 0%;
+  font-size: 14px;
 }
-.informacoes-uteis .informaçoes-uteis-grid-conteiner > div a .info-conteiner-informaçoes-uteis:hover + img {
-  transform: scale(1.05);
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis div:last-child span {
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 10px;
 }
-.informacoes-uteis .informaçoes-uteis-grid-conteiner > div a img {
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis:hover {
+  transform: scale(1.01);
+}
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis:hover div:not(:last-child) {
+  transform: translateY(-35px);
+}
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis:hover div:last-child {
+  opacity: 1;
+}
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis:hover div:last-child:hover span {
+  text-decoration: underline;
+}
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis:hover + img {
+  transform: scale(1.01);
+}
+.informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a img {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: right;
@@ -1508,7 +1544,6 @@ header {
   border: none;
   outline: none;
   pointer-events: none;
-  font-family: "Lato", "Lucida Grande", Tahoma, Sans-Serif;
   font-weight: 700;
   font-size: 1rem;
   color: #2c2c2c;
