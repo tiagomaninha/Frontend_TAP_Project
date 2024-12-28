@@ -1415,8 +1415,6 @@ header {
                         flex-direction: column;
                         height: 100%;
                         width: 100%;
-                        
-                        
 
                         &:last-child{
                             text-align: end;
@@ -1431,15 +1429,213 @@ header {
                             font-weight: 700;
                             font-size: 20px;
                         }
-
                     }
                 }
             }
-
         }
     }
 
+    .ver-mais{
+        margin: auto;
+        padding: 32px 2%;
+        text-align: center;
+        
+        button{
+            padding: 9px 30px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: lucida 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #127045;
+            background-color: #FFFFFF;
+            border: solid 1px #127045;
+            border-radius: 4px;
+            cursor: pointer;
+
+            transition: 0.2s all ease-in-out;
+
+            &:hover{
+                color: #FFFFFF;
+                background-color: #127045;
+            }
+        }
+    }
+
+    .ver-todas-as-ofertas{
+        margin: auto;
+        padding: 32px 2%;
+        text-align: center;
+
+        a{
+            padding: 9px 30px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: lucida 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-decoration: none;
+            color: #2c2c2c;
+            background-color: #72be44;
+            border: solid 1px #72be44;
+            border-radius: 4px;
+
+            transition: 0.3s all ease-in-out;
+
+            &:hover{
+                background-color: #9ee851;
+                border: solid 1px #9ee851;
+            }
+        }
+    }
 }
+
+.informacoes-uteis{
+
+    max-width: 1188px;
+    margin: auto;
+    padding: 0 2%;
+
+
+    p{
+        color: #2c2c2c;
+        font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;        
+        font-weight: 700;
+        font-size: 34px;
+    }
+
+
+    .informaçoes-uteis-grid-conteiner{
+        display: grid;
+        grid-template-columns: minmax(auto, 578px) minmax(auto, 578px);
+        grid-template-rows: minmax(307px, 307px) minmax(52px, 52px) minmax(307px, 307px);
+        gap: 32px;
+        
+        
+        & > div{
+
+            width: 100%;
+            height: 100%;
+
+            border-radius: 8px;
+            position: relative;
+
+            a{
+                width: 100%;
+                height: 100%;
+                margin: auto;
+                cursor: pointer;
+
+                img{
+                    object-fit: cover;
+                    object-position: right;
+                    height: 100%;
+                    width: 100%;   
+                }
+
+                .info-conteiner-informaçoes-uteis{
+
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;   
+
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 16px;
+                        z-index: 2;
+                        width: 100%;
+                        
+                    }
+                }
+            }
+        }
+
+        .informaçoes-uteis-img2{
+            grid-row: span 2;
+        }
+
+        .informaçoes-uteis-img3{
+            grid-row: span 2;
+        }
+    }
+}
+
+.requisitos{
+    max-width: 1188px;
+    margin: 500px auto 50px auto;
+
+
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+    & > div{
+        display: flex;
+        flex-direction: row;
+
+        img{
+            padding: 20px 10px;
+            width: 172px;
+            height: 79px;
+        }
+
+        .info-requesitos{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            div{
+                padding: 10px;
+
+                font-weight: 400;
+                font-size: 16px;
+                color: #2c2c2c;
+
+                &:first-child{
+                    
+                    font-weight: 700;
+                    font-size: 22px;
+                    font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
+                    
+                }
+            }      
+        }
+
+        .saiba-mais-requisitos{
+            margin: auto;
+            margin-right: 32px;
+        
+            align-items: end;
+            justify-content: end;
+            justify-items: end;
+
+            a{
+                padding: 9px 30px;
+                font-size: 16px;
+                font-weight: 700;
+                font-family: lucida 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: #2c2c2c;
+                background-color: #72be44;
+                border: solid 1px #72be44;
+                border-radius: 4px;
+                text-decoration: none;
+
+                transition: 0.3s all ease-in-out;
+
+                &:hover{
+                    background-color: #9ee851;
+                    border: solid 1px #9ee851;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 .star-alliance-container{
