@@ -1691,7 +1691,237 @@ header {
 }
 
 
+.destaques{
 
+    max-width: 1188px;
+    margin: 32px auto;
+    padding: 0 2%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+
+    & > p{
+        color: #2c2c2c;
+        font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;        
+        font-weight: 700;
+        font-size: 30px;
+        margin: 10px 0 40px 0;
+    }
+
+    .destaques-container{
+
+        display: grid;
+        grid-template-columns: 67% auto;
+        grid-template-rows: minmax(210px, 210px) minmax(300px, 300px);
+        gap: 32px;
+        
+
+        div{
+            border-radius: 16px;
+            
+        }
+        
+        .container-img-destaques{
+            grid-row: span 2;
+            position: relative;
+            
+            
+            img{
+                object-fit: cover;
+                object-position: right;
+                height: 78%;
+                width: 100%;  
+                border-radius: 16px;  
+                
+            }
+
+            .destaques-ofertas-exclusivas{
+                background-color: white;
+                width: 100%;
+                
+
+            }
+        }
+
+        .destaques-cartoes{
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #127045;
+
+            div{
+                
+                margin-top: auto;
+
+                &:last-child{
+                    margin-top: 20px;
+                }
+
+                p{
+                    margin:0;
+                    margin-bottom: 4px;
+                    font-weight: 700;  
+                }
+                
+
+                span {
+                    font-weight: 700;
+    
+                    &:hover{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .destaques-club{
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            height: auto;
+
+            box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+            border-top: solid 10px #127045;
+            font-size: 16px;
+            color: #2c2c2c;
+    
+            div{
+                margin-top: auto;
+            }
+
+            p{
+                margin:0;
+                font-weight: 700;
+            }
+
+            .destaques-club-link{
+
+                color: #127045;
+                margin-top: 20px;
+
+                span {
+                    font-weight: 700;
+    
+                    &:hover{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            img{
+                height: 40px;
+            }
+        }
+    }
+
+    .destaques-hover-menu{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        position: absolute;
+        top: 47%;
+        left: 9.8%;
+
+        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        border-radius: 16px;
+        
+
+        .destaques-hover-menu-top{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            padding: 24px 0 32px 40px;
+            
+
+            img{
+                height: 40px;
+                padding-top: 16px;
+            }
+            
+
+            .Ofertas-exclusivas{
+                margin: 0;
+                margin-bottom: auto;
+                padding: 4px 16px;
+
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                font-size: 16px;
+                background-color: #ff2837;
+                color: #fff;
+            }
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+           
+            p{
+                margin: 0;
+                font-size: 16px;
+                font-weight: 700;
+                padding: 0 40px 0 50px;
+            }
+            
+            .destaques-hover-menu-text{
+
+                font-size: 30px;
+                font-weight: 700;    
+                padding: 0 40px 16px 40px;
+            }
+
+            .destaques-hover-menu-links{
+                display: flex;
+                flex-direction: row;
+
+                a{
+                    padding: 9px 30px;
+                    margin: 32px 0 40px 40px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    font-family: lucida 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    color: #2c2c2c;
+                    background-color: #72be44;
+                    border: solid 1px #72be44;
+                    border-radius: 4px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: 0.3s all ease-in-out;
+    
+                    &:hover{
+                        background-color: #9ee851;
+                        border: solid 1px #9ee851;
+                    }
+                }
+                
+                .last-link{
+
+                    a{
+                        margin-left: 16px;
+                        color: #127045;
+                        background-color: #FFFFFF;
+                        border: solid 1px #127045;
+                        
+                        transition: 0.2s all ease-in-out;
+    
+                        &:hover{
+                        color: #FFFFFF;
+                        background-color: #127045;
+                        }
+                    }  
+                }
+            }
+        }
+    }
+}
 
 
 

@@ -1455,6 +1455,184 @@ header {
   border: solid 1px #9ee851;
 }
 
+.destaques {
+  max-width: 1188px;
+  margin: 32px auto;
+  padding: 0 2%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.destaques > p {
+  color: #2c2c2c;
+  font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin: 10px 0 40px 0;
+}
+.destaques .destaques-container {
+  display: grid;
+  grid-template-columns: 67% auto;
+  grid-template-rows: minmax(210px, 210px) minmax(300px, 300px);
+  gap: 32px;
+}
+.destaques .destaques-container div {
+  border-radius: 16px;
+}
+.destaques .destaques-container .container-img-destaques {
+  grid-row: span 2;
+  position: relative;
+}
+.destaques .destaques-container .container-img-destaques img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: right;
+     object-position: right;
+  height: 78%;
+  width: 100%;
+  border-radius: 16px;
+}
+.destaques .destaques-container .container-img-destaques .destaques-ofertas-exclusivas {
+  background-color: white;
+  width: 100%;
+}
+.destaques .destaques-container .destaques-cartoes {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #127045;
+}
+.destaques .destaques-container .destaques-cartoes div {
+  margin-top: auto;
+}
+.destaques .destaques-container .destaques-cartoes div:last-child {
+  margin-top: 20px;
+}
+.destaques .destaques-container .destaques-cartoes div p {
+  margin: 0;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.destaques .destaques-container .destaques-cartoes div span {
+  font-weight: 700;
+}
+.destaques .destaques-container .destaques-cartoes div span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.destaques .destaques-container .destaques-club {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  height: auto;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+  border-top: solid 10px #127045;
+  font-size: 16px;
+  color: #2c2c2c;
+}
+.destaques .destaques-container .destaques-club div {
+  margin-top: auto;
+}
+.destaques .destaques-container .destaques-club p {
+  margin: 0;
+  font-weight: 700;
+}
+.destaques .destaques-container .destaques-club .destaques-club-link {
+  color: #127045;
+  margin-top: 20px;
+}
+.destaques .destaques-container .destaques-club .destaques-club-link span {
+  font-weight: 700;
+}
+.destaques .destaques-container .destaques-club .destaques-club-link span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.destaques .destaques-container .destaques-club img {
+  height: 40px;
+}
+.destaques .destaques-hover-menu {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  position: absolute;
+  top: 47%;
+  left: 9.8%;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 16px;
+}
+.destaques .destaques-hover-menu .destaques-hover-menu-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 24px 0 32px 40px;
+}
+.destaques .destaques-hover-menu .destaques-hover-menu-top img {
+  height: 40px;
+  padding-top: 16px;
+}
+.destaques .destaques-hover-menu .destaques-hover-menu-top .Ofertas-exclusivas {
+  margin: 0;
+  margin-bottom: auto;
+  padding: 4px 16px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-size: 16px;
+  background-color: #ff2837;
+  color: #fff;
+}
+.destaques .destaques-hover-menu div {
+  display: flex;
+  flex-direction: column;
+}
+.destaques .destaques-hover-menu div p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0 40px 0 50px;
+}
+.destaques .destaques-hover-menu div .destaques-hover-menu-text {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0 40px 16px 40px;
+}
+.destaques .destaques-hover-menu div .destaques-hover-menu-links {
+  display: flex;
+  flex-direction: row;
+}
+.destaques .destaques-hover-menu div .destaques-hover-menu-links a {
+  padding: 9px 30px;
+  margin: 32px 0 40px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: lucida "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: #2c2c2c;
+  background-color: #72be44;
+  border: solid 1px #72be44;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+.destaques .destaques-hover-menu div .destaques-hover-menu-links a:hover {
+  background-color: #9ee851;
+  border: solid 1px #9ee851;
+}
+.destaques .destaques-hover-menu div .destaques-hover-menu-links .last-link a {
+  margin-left: 16px;
+  color: #127045;
+  background-color: #FFFFFF;
+  border: solid 1px #127045;
+  transition: 0.2s all ease-in-out;
+}
+.destaques .destaques-hover-menu div .destaques-hover-menu-links .last-link a:hover {
+  color: #FFFFFF;
+  background-color: #127045;
+}
+
 .star-alliance-container {
   max-width: 1188px;
   margin: 0px auto;
