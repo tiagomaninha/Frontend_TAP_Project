@@ -21,7 +21,6 @@ function moveSlide() {
             currentSlide = 0;
         }
     }, 500); // transicao
-    
 }
 
 setInterval(() => {
@@ -127,18 +126,18 @@ let liMainHeaderButton = document.querySelectorAll(".header-title")
 let subListTitle = document.querySelectorAll(".list-title")
 
 sandwich.addEventListener("click", function() {
-        if (window.innerWidth <= 1024) {
-            let sandwichMenu = document.querySelector(".mediaquery-sandwich")
-        
-            if (sandwichMenu.classList.contains("active")) {
-                sandwichMenu.classList.remove("active")
-                sandwich.innerHTML = "&#9776;"
-            } else {
-                sandwichMenu.classList.add("active")
-                sandwich.innerHTML = "&#x2715;"
-            }
+    if (window.innerWidth <= 1024) {
+        let sandwichMenu = document.querySelector(".mediaquery-sandwich")
+    
+        if (sandwichMenu.classList.contains("active")) {
+            sandwichMenu.classList.remove("active")
+            sandwich.innerHTML = "&#9776;"
+        } else {
+            sandwichMenu.classList.add("active")
+            sandwich.innerHTML = "&#x2715;"
         }
-    })
+    }
+})
 
 liMainHeaderButton.forEach(element => {
     let pai = element.parentElement

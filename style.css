@@ -1214,6 +1214,9 @@ header {
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner:hover img {
+  transform: scale(1.1);
+}
 .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a {
   display: flex;
   flex-direction: row;
@@ -1233,11 +1236,9 @@ header {
      object-fit: cover;
   transition: 0.3s all ease-in-out;
 }
-.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-img img:hover {
-  transform: scale(1.2);
-}
 .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-let {
   display: flex;
+  margin: auto 0;
   width: 75%;
 }
 .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-let div {
@@ -1250,12 +1251,14 @@ header {
   text-align: end;
 }
 .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-let div span {
-  padding: 3px 20px;
-  color: black;
+  padding: 2px 20px;
+  font-size: 14px;
+  color: #666;
 }
 .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner a .ofertas-voos-conteiner-let div .muda-letra-2 {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
+  color: black;
 }
 .ofertas-voos-exemplos .ver-mais {
   margin: auto;
@@ -1476,14 +1479,14 @@ header {
   grid-template-rows: minmax(210px, 210px) minmax(300px, 300px);
   gap: 32px;
 }
-.destaques .destaques-container div {
+.destaques .destaques-container > div {
   border-radius: 16px;
 }
 .destaques .destaques-container .container-img-destaques {
   grid-row: span 2;
   position: relative;
 }
-.destaques .destaques-container .container-img-destaques img {
+.destaques .destaques-container .container-img-destaques > img {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: right;
@@ -1523,14 +1526,16 @@ header {
   cursor: pointer;
 }
 .destaques .destaques-container .destaques-club {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 40px;
   height: auto;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
-  border-top: solid 10px #127045;
   font-size: 16px;
   color: #2c2c2c;
+  overflow: hidden;
+  border-radius: 8px;
 }
 .destaques .destaques-container .destaques-club div {
   margin-top: auto;
@@ -1539,27 +1544,37 @@ header {
   margin: 0;
   font-weight: 700;
 }
-.destaques .destaques-container .destaques-club .destaques-club-link {
+.destaques .destaques-container .destaques-club .destaques-club-link a {
+  text-decoration: none;
   color: #127045;
   margin-top: 20px;
 }
-.destaques .destaques-container .destaques-club .destaques-club-link span {
+.destaques .destaques-container .destaques-club .destaques-club-link a span {
   font-weight: 700;
 }
-.destaques .destaques-container .destaques-club .destaques-club-link span:hover {
+.destaques .destaques-container .destaques-club .destaques-club-link a span:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 .destaques .destaques-container .destaques-club img {
   height: 40px;
 }
+.destaques .destaques-container .destaques-club .linha {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 8px;
+  background-color: #127045;
+}
 .destaques .destaques-hover-menu {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  position: absolute;
-  top: 47%;
-  left: 9.8%;
+  width: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0%;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
   background-color: white;
   border-radius: 16px;
