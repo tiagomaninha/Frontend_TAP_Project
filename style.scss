@@ -1792,14 +1792,8 @@ ul.top-header{
             grid-template-columns: auto auto;
         }
         
-        .hiden{
-            display: none;
-        }
-        
         @media screen and (max-width: 767px){
-            .hiden {
-                display: block;
-            }
+            
             grid-template-columns: auto;
             width: 100%;
             
@@ -1824,7 +1818,6 @@ ul.top-header{
                 text-decoration: none;
                 width: 100%;
                 height: 100%;
-
 
                 .ofertas-voos-conteiner-img{
                     width: 100px;
@@ -1877,10 +1870,6 @@ ul.top-header{
         padding: 32px 2%;
         text-align: center;
         
-        @media screen and (max-width: 767px){
-            display: none;
-        }
-
         button{
             padding: 9px 30px;
             font-size: 16px;
@@ -1909,10 +1898,6 @@ ul.top-header{
         margin: auto;
         padding: 32px 2%;
         text-align: center;
-
-        @media screen and (max-width: 767px){
-            display: block;
-        }
 
         a{
             padding: 9px 30px;
