@@ -103,7 +103,7 @@ let botoes = document.querySelectorAll(".footer-links div button")
 
 for(let i=0; i<botoes.length; i++){
     botoes[i].addEventListener("click",function(){
-        let lista = this.nextElementSibling
+        let lista = this.parentElement
        
         if(lista.classList.contains("desaparecer")){
             lista.classList.remove("desaparecer")
@@ -177,5 +177,47 @@ document.getElementById("mostra-row").addEventListener("click",function(){
     }
 
     this.parentElement.style.display="none";
+})
 
+const selectTipo = document.getElementById("selectTipo")
+const selectData = document.getElementById("selectData")
+
+const hoje = new Date()
+
+function obterProximoNDia(n) {
+    const proximoNDia = new Date(hoje)
+    proximoNDia.setDate(hoje.getDate()+n)
+    return proximoNDia
+}
+
+for (let i = 0; i < 5; i++) {
+    let nDia = obterProximoNDia(i)
+    const option = document.createElement("option")
+    const dia = nDia.getDate().toString().padStart(2, '0');
+    const mes = (nDia.getMonth() + 1).toString().padStart(2, '0');
+    const ano = nDia.getFullYear();
+
+    option.textContent = dia + "/" + mes + "/" + ano
+
+    selectData.appendChild(option)
+}
+
+selectTipo.selectedIndex = "-1"
+selectData.selectedIndex = "-1"
+
+selectTipo.addEventListener("focus", function() {
+    if (this.selectedIndex == "-1") {
+        this.selectedIndex = "0"
+    }
+    
+    this.classList.add("selected")
+})
+
+
+selectData.addEventListener("focus", function() {
+    if (this.selectedIndex == "-1") {
+        this.selectedIndex = "0"
+    }
+
+    this.classList.add("selected")
 })

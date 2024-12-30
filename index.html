@@ -476,6 +476,8 @@
                             As minhas viagens
                         </span>
                     </button>
+                    <div class = "main-menu-container" id = "menu2">
+                    </div>
                 </li>
                 <li>
                     <button onclick = "changeMenu(3)">
@@ -488,6 +490,8 @@
                             Check-in
                         </span>
                     </button>
+                    <div class = "main-menu-container" id = "menu3">
+                    </div>
                 </li>
                 <li>
                     <button onclick = "changeMenu(4)">
@@ -500,17 +504,54 @@
                             Estado do voo
                         </span>
                     </button>
+                    <div class = "main-menu-container" id = "menu4">
+                        <ul class = "main-menu-header">
+                            <li>
+                                <ul>
+                                    <li class = "active">Por aeroporto</li>
+                                    <li>Por origem e destino</li>
+                                    <li>Por voo</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class = "main-menu-options">
+                            <div class = "main-options estado-voo">
+                                <form>
+                                    <div class = "option">
+                                        <div class = "icon-container">
+                                            <svg>
+                                                <use xlink:href="img/icons/icons.svg#plane_related--ida-volta"></use>
+                                            </svg>
+                                        </div>
+                                        <select placeholder = "Tipo de voo" id = "selectTipo">
+                                            <option value = "1">Voo de ida</option>
+                                            <option value = "2">Voo de regresso</option>
+                                        </select>
+                                        <label>Tipo de vôo</label>
+                                    </div>
+                                    <div class = "option">
+                                        <div class = "icon-container">
+                                            <svg>
+                                                <use xlink:href="img/icons/icons.svg#general--calendar"></use>
+                                            </svg>
+                                        </div>
+                                        <select placeholder = "Tipo de voo" id = "selectData">
+                                        </select>
+                                        <label>Selecionar datas</label>
+                                    </div>
+                                    <div class = "option">
+                                        <label>De</label>
+                                        <div class = "input-container">
+                                            <div>LIS</div>
+                                            <input type = "text" value = "Lisboa, Portugal" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </li>
             </ul>
-            <div class = "main-menu-container" id = "menu2">
-
-            </div>
-            <div class = "main-menu-container" id = "menu3">
-
-            </div>
-            <div class = "main-menu-container" id = "menu4">
-
-            </div>
         </div>
     </section>
 
@@ -1199,11 +1240,11 @@
     <section class="footer-links-container">
 
         <div class="footer-links">
-            <div>
+            <div class ="desaparecer">
                 <button>
                     Links úteis
                 </button>    
-                <ul class ="desaparecer">
+                <ul>
                     <li>
                         <a href="">Check-in online</a>
                     </li>
@@ -1234,11 +1275,11 @@
                     </li>
                 </ul>
             </div>
-            <div>
+            <div class ="desaparecer">
                 <button>
                     Outros recursos importantes
                 </button>
-                <ul class="desaparecer">
+                <ul>
                     <li>
                         <a href="">Condições de transporte</a>
                     </li>
@@ -1271,11 +1312,11 @@
                     </li>
                 </ul>
             </div>
-            <div>
+            <div class ="desaparecer">
                 <button>
                     Destinos em destaque
                 </button>
-                <ul class="desaparecer">
+                <ul>
                     <li>
                         <a href="">Voos Lisboa</a>
                     </li>
