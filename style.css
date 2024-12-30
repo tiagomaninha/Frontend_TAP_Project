@@ -1446,6 +1446,49 @@ header {
   font-weight: 700;
   font-size: 18px;
 }
+@media screen and (max-width: 767px) {
+  .ofertas-voos .ofertas-voos-exem .mudar-img {
+    display: flex;
+    padding: 10px;
+    margin: 0;
+  }
+  .ofertas-voos .ofertas-voos-exem .mudar-img li {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .ofertas-voos .ofertas-voos-exem .mudar-img li div {
+    bottom: 0;
+  }
+  .ofertas-voos .ofertas-voos-exem .mudar-img li img {
+    width: 100%;
+    height: auto;
+  }
+}
+.ofertas-voos .dot-container {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .ofertas-voos .dot-container {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 16px;
+  }
+  .ofertas-voos .dot-container div {
+    padding: 4px;
+    margin: 0 5px;
+    background-color: #9ee851;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .ofertas-voos .dot-container .ativo {
+    padding: 4px 10px;
+    border-radius: 50px;
+  }
+}
 .ofertas-voos .ofertas-voos-mid {
   display: flex;
   flex-direction: row;

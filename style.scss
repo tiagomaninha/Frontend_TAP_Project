@@ -70,7 +70,6 @@ ul.top-header{
 .top-header li {
     padding: 8px;
     
-    
     a {
         color: white;
         font-size: 14px;
@@ -1622,6 +1621,60 @@ ul.top-header{
                     }
                 }
             }
+        }
+
+        .mudar-img{
+            @media screen and (max-width: 767px){
+
+                display: flex;
+                padding: 10px;
+                margin: 0;
+
+                li {
+                    display: flex;
+                    flex: 0 0 100%;
+                    justify-content: center;
+                    align-items: center;
+
+                    div{
+                        bottom: 0;
+                    }
+                
+                    img {
+                      width: 100%;
+                      height: auto; 
+                    }
+                }
+            }
+        }
+    }
+
+    .dot-container{
+        
+        display: none;
+
+        @media screen and (max-width: 767px){
+            display:block;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            padding-bottom: 16px;
+    
+            div{
+                padding: 4px;
+                margin: 0 5px;
+                background-color: #9ee851;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .ativo{
+                padding: 4px 10px;
+                border-radius: 50px ;
+            }
+
         }
     }
 
