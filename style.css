@@ -267,7 +267,7 @@ header {
   .main-header > ul > li:not(:first-child):hover > .list-menu-container-center {
     display: flex;
   }
-  .main-header > ul > li:not(:first-child) span::after {
+  .main-header > ul > li:not(:first-child) > div > span::after {
     content: "";
     position: absolute;
     width: 0;
@@ -377,18 +377,35 @@ header {
 .main-header > ul > li .list-menu-container-center {
   position: fixed;
   display: none;
-  left: 50%;
-  padding: 2% 10% 0 10%;
-  max-width: 1188px;
-  transform: translateX(-50%);
+  width: 100%;
   box-sizing: border-box;
   z-index: 2;
+  height: 300px;
+  left: 0;
+}
+@media screen and (max-width: 1024px) {
+  .main-header > ul > li .list-menu-container-center {
+    max-width: 1188px;
+    transform: translateX(-50%);
+    left: 50%;
+    height: auto;
+  }
 }
 .main-header > ul > li .list-menu-container-center .list-menu-container {
   background-color: white;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   color: #4a4a4a;
+}
+@media screen and (min-width: 1024px) {
+  .main-header > ul > li .list-menu-container-center .list-menu-container {
+    position: absolute;
+    max-width: 1188px;
+    transform: translateX(-50%);
+    top: 8%;
+    left: 50%;
+    height: auto;
+  }
 }
 .main-header > ul > li .list-menu-container-center .list-menu-container .list-menu {
   display: flex;
@@ -569,7 +586,7 @@ header {
   .mediaquery-sandwich + div {
     display: none;
   }
-  .active + div {
+  .mediaquery-sandwich.active + div {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -585,7 +602,7 @@ header {
   }
 }
 @media screen and (max-width: 767px) {
-  .active + div {
+  .mediaquery-sandwich.active + div {
     width: 100%;
   }
 }
@@ -596,13 +613,13 @@ header {
   color: black;
   z-index: 10;
 }
-.fixed ul li:not(:first-child) span::after {
+.fixed > ul > li:not(:first-child) > div span::after {
   background-color: #127045;
 }
-.fixed ul li.login #imgUser {
+.fixed > ul > li.login #imgUser {
   display: none;
 }
-.fixed ul li.login .imgUserVerde {
+.fixed > ul > li.login .imgUserVerde {
   display: block;
 }
 
@@ -751,7 +768,7 @@ header {
 }
 @media screen and (max-width: 1024px) {
   .info-container {
-    margin-top: -50px;
+    margin-top: -70px;
     height: auto;
   }
 }
@@ -762,6 +779,13 @@ header {
   width: 100%;
   height: 10px;
   margin-bottom: 10px;
+}
+@media screen and (max-width: 1024px) {
+  .info-container .dots-container {
+    margin-bottom: 30px;
+    width: 200px;
+    height: auto;
+  }
 }
 .info-container .dots-container .active {
   background-color: white;
@@ -1465,6 +1489,9 @@ header {
   font-weight: 700;
   font-size: 18px;
 }
+.ofertas-voos .ofertas-voos-exem .mudar-img {
+  overflow-x: hidden;
+}
 @media screen and (max-width: 767px) {
   .ofertas-voos .ofertas-voos-exem .mudar-img {
     display: flex;
@@ -1476,6 +1503,7 @@ header {
     flex: 0 0 100%;
     justify-content: center;
     align-items: center;
+    transition: transform 0.4s ease-in-out;
   }
   .ofertas-voos .ofertas-voos-exem .mudar-img li div {
     bottom: 0;
@@ -1696,6 +1724,7 @@ header {
   max-width: 1188px;
   margin: auto;
   padding: 0 2%;
+  overflow: hidden;
 }
 .informacoes-uteis p {
   color: #2c2c2c;
@@ -1712,6 +1741,7 @@ header {
 @media screen and (max-width: 767px) {
   .informacoes-uteis .informaçoes-uteis-grid-conteiner {
     grid-template-columns: auto;
+    grid-template-rows: repeat(4, 300px);
     width: 100%;
   }
 }
@@ -1739,7 +1769,7 @@ header {
 .informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis div {
   display: flex;
   align-items: flex-end;
-  padding: 0px 16px 16px 16px;
+  padding: 16px 16px 16px 16px;
   width: 95%;
   font-size: 19px;
   color: white;
@@ -1805,11 +1835,13 @@ header {
   transition: 0.3s all ease-in-out;
   z-index: 0;
 }
-.informacoes-uteis .informaçoes-uteis-grid-conteiner .informaçoes-uteis-img2 {
-  grid-row: span 2;
-}
-.informacoes-uteis .informaçoes-uteis-grid-conteiner .informaçoes-uteis-img3 {
-  grid-row: span 2;
+@media screen and (min-width: 767px) {
+  .informacoes-uteis .informaçoes-uteis-grid-conteiner .informaçoes-uteis-img2 {
+    grid-row: span 2;
+  }
+  .informacoes-uteis .informaçoes-uteis-grid-conteiner .informaçoes-uteis-img3 {
+    grid-row: span 2;
+  }
 }
 
 .requisitos {
@@ -2372,7 +2404,7 @@ footer .footer-container a:hover {
   background-color: white;
   border-radius: 8px;
   transform: translate(-50%, -50%);
-  z-index: 4;
+  z-index: 5;
 }
 .modal .close-modal {
   position: absolute;
@@ -2429,6 +2461,6 @@ footer .footer-container a:hover {
   left: 0%;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 4;
   background-color: rgba(49, 49, 49, 0.7764705882);
 }/*# sourceMappingURL=style.css.map */

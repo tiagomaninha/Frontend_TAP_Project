@@ -127,11 +127,11 @@ const body = document.querySelector("body")
 let sandwich = document.querySelector(".sandwich-menu")
 let liMainHeaderButton = document.querySelectorAll(".header-title")
 let subListTitle = document.querySelectorAll(".list-title")
+let sandwichMenu = document.querySelector(".mediaquery-sandwich")
 
 sandwich.addEventListener("click", function() {
     if (window.innerWidth <= 1024) {
-        let sandwichMenu = document.querySelector(".mediaquery-sandwich")
-    
+        
         if (sandwichMenu.classList.contains("active")) {
             filter.style.display = "none"
             body.style.overflow = "auto"
@@ -149,6 +149,19 @@ sandwich.addEventListener("click", function() {
         }
     }
 })
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+        filter.style.display = "none"
+        allElementsNotHeader.style.pointerEvents = "all"
+        body.style.overflow = "auto"
+
+        if (sandwichMenu.classList.contains("active")) {
+            sandwichMenu.classList.remove("active")
+            sandwich.innerHTML = "&#9776;"
+        }
+    }
+});
 
 liMainHeaderButton.forEach(element => {
     let pai = element.parentElement
@@ -201,7 +214,7 @@ function obterProximoNDia(n) {
     return proximoNDia
 }
 
-for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 5; i++) {
     let nDia = obterProximoNDia(i)
     const option = document.createElement("option")
     const dia = nDia.getDate().toString().padStart(2, '0');
@@ -308,17 +321,23 @@ document.querySelector(".close-modal").addEventListener("click", closeModal)
 
 
 const dots = document.querySelectorAll('.dot-container div');
+const images = document.querySelectorAll(".mudar-img li")
+let currentDot = 0
 
-dots.forEach(dot => {
-  dot.addEventListener('click', () => {
-    // Remove a classe "ativo" de todas as divs
-    dots.forEach(d => d.classList.remove('ativo'));
+for (let i = 0; i < dots.length; i++) {
+    let dot = dots[i]
 
-    // Adiciona a classe "ativo" na div clicada
-    dot.classList.add('ativo');
-  });
-});
+    dot.addEventListener('click', () => {
+        currentDot = i+1;
+        dots.forEach(d => d.classList.remove('ativo'));
+        dot.classList.add('ativo');
+        console.log(images)
 
+        images.forEach(element => {
+            element.style.transform = `translateX(calc(${-103.5 * (i)}%))`;
+        });
+    });
+}
 
 
 
