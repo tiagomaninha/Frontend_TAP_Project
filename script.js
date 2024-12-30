@@ -37,7 +37,7 @@ setInterval(() => {
     
     elementoAtivo.classList.remove("active")
     botoesSlides[slide].classList.toggle("active")
-}, 30 * 1000); // 30 segundos
+}, 30 * 1000 * 100); // 30 segundos
 
 function changeSlide(n) {
     let elementoAtivo = document.querySelector(".dots-container .active")
@@ -89,7 +89,7 @@ function fixarHeader(bool, width) {
 
 botoesMenu.forEach((botao) => {
     botao.addEventListener("click", function(event) {
-        let elementoAtivo = document.querySelector(".multi-menu-container .active")
+        let elementoAtivo = document.querySelector(".multi-menu-container > .active")
         let pai = event.target.parentElement
         
         elementoAtivo.classList.remove("active")

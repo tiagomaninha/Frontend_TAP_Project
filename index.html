@@ -401,6 +401,69 @@
                             Reservar um voo
                         </span>
                     </button>
+                    <div class = "main-menu-container" id = "menu1">
+                        <ul class = "main-menu-header">
+                            <li>
+                                <ul>
+                                    <li class = "active">Ida e volta</li>
+                                    <li>Só ida</li>
+                                    <li>Multi-city</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Pagar com milhas
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Mostrar todas as datas e melhores ofertas
+                                </label>
+                            </li>
+                        </ul>
+                        <div class = "main-menu-options">
+                            <div class = "main-options">
+                                <div class = "option">
+                                    <label>De</label>
+                                    <div class = "input-container">
+                                        <div>LIS</div>
+                                        <input type = "text" value = "Lisboa, Portugal" disabled>
+                                    </div>
+                                </div>
+                                
+                                <div class = "option-icon">
+                                    <svg>
+                                        <use xlink:href="img/icons/icons.svg#plane_related--flights_inbound_and_outbound"></use>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="img/icons/icons.svg#general--arrow--long_both"></use>
+                                    </svg> 
+                                </div>
+                                <div class = "option">
+                                    <label>Para onde?</label>
+                                    <div class = "input-container">
+                                        <input type = "text" value = "JFK, Nova Iorque">
+                                    </div>
+                                </div>
+                                <div class = "option">
+                                    <label>Quando?</label>
+                                    <div class = "input-container">
+                                        <input type="date">                            
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "line-container">  
+                                <svg>
+                                    <use xlink:href="img/icons/icons.svg#destinations--stopover_experience"></use>
+                                </svg>
+                                <span>Adicionar um TAP Stopover gratuito.</span>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <button onclick = "changeMenu(2)">
@@ -439,69 +502,6 @@
                     </button>
                 </li>
             </ul>
-            <div class = "main-menu-container" id = "menu1">
-                <ul class = "main-menu-header">
-                    <li>
-                        <ul>
-                            <li class = "active">Ida e volta</li>
-                            <li>Só ida</li>
-                            <li>Multi-city</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <label class="custom-checkbox">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                            Pagar com milhas
-                        </label>
-                    </li>
-                    <li>
-                        <label class="custom-checkbox">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                            Mostrar todas as datas e melhores ofertas
-                        </label>
-                    </li>
-                </ul>
-                <div class = "main-menu-options">
-                    <div class = "main-options">
-                        <div class = "option">
-                            <label>De</label>
-                            <div class = "input-container">
-                                <div>LIS</div>
-                                <input type = "text" value = "Lisboa, Portugal" disabled>
-                            </div>
-                        </div>
-                        
-                        <div class = "option-icon">
-                            <svg>
-                                <use xlink:href="img/icons/icons.svg#plane_related--flights_inbound_and_outbound"></use>
-                            </svg>
-                            <svg>
-                                <use xlink:href="img/icons/icons.svg#general--arrow--long_both"></use>
-                            </svg> 
-                        </div>
-                        <div class = "option">
-                            <label>Para onde?</label>
-                            <div class = "input-container">
-                                <input type = "text" value = "JFK, Nova Iorque">
-                            </div>
-                        </div>
-                        <div class = "option">
-                            <label>Quando?</label>
-                            <div class = "input-container">
-                                <input type="date">                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class = "line-container">  
-                        <svg>
-                            <use xlink:href="img/icons/icons.svg#destinations--stopover_experience"></use>
-                        </svg>
-                        <span>Adicionar um TAP Stopover gratuito.</span>
-                    </div>
-                </div>
-            </div>
             <div class = "main-menu-container" id = "menu2">
 
             </div>
