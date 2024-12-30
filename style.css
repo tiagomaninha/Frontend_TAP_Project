@@ -10,7 +10,7 @@ body {
 header {
   position: absolute;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   color: white;
 }
 
@@ -319,6 +319,9 @@ header {
   margin: auto 0;
   margin-left: auto;
 }
+.main-header > ul > li.login .imgUserVerde {
+  display: none;
+}
 .main-header > ul > li.login img {
   position: relative;
   margin: auto;
@@ -581,6 +584,11 @@ header {
     background-color: white;
   }
 }
+@media screen and (max-width: 767px) {
+  .active + div {
+    width: 100%;
+  }
+}
 .fixed {
   position: fixed;
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
@@ -593,6 +601,9 @@ header {
 }
 .fixed ul li.login #imgUser {
   display: none;
+}
+.fixed ul li.login .imgUserVerde {
+  display: block;
 }
 
 /* BACKGROUND */
@@ -1543,7 +1554,6 @@ header {
   .ofertas-voos-exemplos {
     display: flex;
     flex-direction: column;
-    height: 500px;
     flex-wrap: wrap;
   }
 }
@@ -1563,10 +1573,7 @@ header {
 }
 @media screen and (max-width: 767px) {
   .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
+    grid-template-columns: auto;
     width: 100%;
   }
   .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .hiden {
@@ -1712,7 +1719,6 @@ header {
   width: 100%;
   height: 100%;
   position: relative;
-  z-index: 2;
 }
 .informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a {
   width: 100%;
