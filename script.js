@@ -167,3 +167,15 @@ subListTitle.forEach(element => {
         }
     })
 })
+
+document.getElementById("mostra-row").addEventListener("click",function(){
+
+    const ofertas = document.querySelectorAll(".hiden");
+
+    for(let i=0; i<ofertas.length ; i++){
+        ofertas[i].classList.remove("hiden")
+    }
+
+    this.parentElement.style.display="none";
+
+})

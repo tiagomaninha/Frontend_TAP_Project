@@ -1201,9 +1201,42 @@ header {
     margin: 16px auto;
     padding: 0 2%;
 
-    div{
-        
+    &>div{
+
         padding: 30px 0;
+        
+        .reservas-last-link{
+            text-align: center;
+            padding-top: 16px;
+            color: #127045;
+            display: none;
+
+            @media screen and (max-width: 1024px){
+                display: flex;
+            }
+
+            a{
+                display: flex;
+                text-decoration: none;  
+                color: #127045;
+                font-size: 16px;
+                font-weight: 700;
+                width: auto;
+                margin: 0 auto;
+
+                img{
+                    width: 20px;
+                    height: 20px;
+                    margin-top: auto;
+                }
+            }
+
+            &:hover{
+                a{
+                    text-decoration: underline;
+                }
+            }
+        }
 
         ul{
             display: flex;
@@ -1213,14 +1246,18 @@ header {
             
             border: solid 1px #eee;
             border-radius: 10px;
-
-    
+            
             li{
                 list-style: none;
                 width: 100%;
                 padding: 8px;
                 text-align: center;
-
+                
+                @media screen and (max-width: 1024px){
+                    &:nth-child(4), &:nth-child(5), &:nth-child(6){
+                        display: none;   
+                    }
+                }
                 
                 &:hover{
                     a{
@@ -1239,6 +1276,12 @@ header {
 
                 &:not(:last-child){
                     border-right: solid 1px #eee;
+
+                    @media screen and (max-width: 1024px){
+                        &:nth-child(3){
+                            border: none;
+                        }
+                    }
                 }
  
                 a{
@@ -1299,6 +1342,10 @@ header {
         flex-direction: row;
         padding-bottom: 32px;
 
+        @media screen and (max-width: 767px){
+            flex-direction: column;
+        }
+
         h5{
             color: #2c2c2c;
             margin: auto 0;
@@ -1307,6 +1354,10 @@ header {
             font-weight: 700;
             font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
             font-size: 24px;
+
+            @media screen and (max-width: 767px){
+                padding-bottom: 0;
+            }
         }
     
         select{
@@ -1323,9 +1374,18 @@ header {
             border-radius: 4px;
             box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-
+ 
             option{
                 color:#000000;
+            }
+
+            @media screen and (max-width: 767px){
+                width: auto;
+                margin: 4px auto auto 0;
+                padding: 0;
+                text-decoration: underline;
+                box-shadow: none;
+                text-align: left;
             }
         }
     }
@@ -1337,7 +1397,6 @@ header {
             flex-direction: row;
             margin: 0 auto;
             padding: 0;
-            
             
             li{
                 list-style: none;
@@ -1440,6 +1499,11 @@ header {
                 &:hover{
                     text-decoration: underline;
                 }
+
+                @media screen and (max-width: 767px){
+                    display: none;
+                }
+
             }
         }    
     }
@@ -1450,6 +1514,13 @@ header {
     margin: auto;
     padding: 0 2%;
     
+    @media screen and (max-width: 767px){
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        flex-wrap: wrap;
+    }
+
     .ofertas-voos-exemplos-conteiner{
         display: grid;
         grid-template-columns: auto auto auto;
@@ -1457,10 +1528,37 @@ header {
         gap: 32px;
         
 
+        @media screen and (max-width: 1024px){
+            grid-template-columns: auto auto;
+        }
+        
+        .hiden{
+            display: none;
+        }
+        
+        @media screen and (max-width: 767px){
+            .hiden{
+                display: block;
+            }
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+           height: 100%;
+            
+            width: 100%;
+            
+        }
+
         .ofertas-voos-conteiner{
             border-radius: 10px;
             box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+
+            @media screen and (max-width: 767px){
+                width: 100%;
+            }
 
             &:hover img {
                 transform: scale(1.1);
@@ -1525,6 +1623,10 @@ header {
         padding: 32px 2%;
         text-align: center;
         
+        @media screen and (max-width: 767px){
+            display: none;
+        }
+
         button{
             padding: 9px 30px;
             font-size: 16px;
@@ -1545,10 +1647,18 @@ header {
         }
     }
 
+    .hiden{
+        display: none;
+    }
+
     .ver-todas-as-ofertas{
         margin: auto;
         padding: 32px 2%;
         text-align: center;
+
+        @media screen and (max-width: 767px){
+            display: block;
+        }
 
         a{
             padding: 9px 30px;
@@ -1591,6 +1701,10 @@ header {
         grid-template-rows: 310px 52px 310px;
         gap: 32px;
         
+        @media screen and (max-width: 767px){
+            grid-template-columns: auto;
+            width: 100%;
+        }
         & > div {
             
             width: 100%;
@@ -1624,11 +1738,17 @@ header {
                         height: auto;
                         transition: 0.3s all ease-in-out;
 
+                        @media screen and (max-width: 1024px){
+                            transition: none;
+                        }
+
+
                         &:first-child{
                             margin-top: auto;
                             font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
                             font-weight: 700;
                             font-size: 24px;
+
                         } 
 
                         &:last-child {
@@ -1638,6 +1758,10 @@ header {
                             bottom: 0%;
                             font-size: 14px;
 
+                            @media screen and (max-width: 1024px){
+                                opacity: 1;
+                            }
+
                             span {
                                 font-size: 16px;
                                 font-weight: 700;
@@ -1645,12 +1769,20 @@ header {
                             }
                         }
                     }
+                   
+                    @media screen and (max-width: 1024px){
 
+                        div:not(:last-child) {
+                            transform: translateY(-35px);                          
+                        }
+                    }
+                    
                     &:hover{
+                        
                         transform: scale(1.01);
 
                         div:not(:last-child) {
-                            transform: translateY(-35px);
+                            transform: translateY(-35px);                          
                         }
 
                         div:last-child {

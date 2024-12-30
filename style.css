@@ -1080,10 +1080,38 @@ header {
   margin: 16px auto;
   padding: 0 2%;
 }
-.reservas div {
+.reservas > div {
   padding: 30px 0;
 }
-.reservas div ul {
+.reservas > div .reservas-last-link {
+  text-align: center;
+  padding-top: 16px;
+  color: #127045;
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .reservas > div .reservas-last-link {
+    display: flex;
+  }
+}
+.reservas > div .reservas-last-link a {
+  display: flex;
+  text-decoration: none;
+  color: #127045;
+  font-size: 16px;
+  font-weight: 700;
+  width: auto;
+  margin: 0 auto;
+}
+.reservas > div .reservas-last-link a img {
+  width: 20px;
+  height: 20px;
+  margin-top: auto;
+}
+.reservas > div .reservas-last-link:hover a {
+  text-decoration: underline;
+}
+.reservas > div ul {
   display: flex;
   flex-direction: row;
   padding: 8px 0px;
@@ -1091,33 +1119,43 @@ header {
   border: solid 1px #eee;
   border-radius: 10px;
 }
-.reservas div ul li {
+.reservas > div ul li {
   list-style: none;
   width: 100%;
   padding: 8px;
   text-align: center;
 }
-.reservas div ul li:hover a {
+@media screen and (max-width: 1024px) {
+  .reservas > div ul li:nth-child(4), .reservas > div ul li:nth-child(5), .reservas > div ul li:nth-child(6) {
+    display: none;
+  }
+}
+.reservas > div ul li:hover a {
   color: #127045;
   text-decoration: underline;
 }
-.reservas div ul li:hover a div {
+.reservas > div ul li:hover a div {
   background-color: #127045;
 }
-.reservas div ul li:hover a div svg {
+.reservas > div ul li:hover a div svg {
   fill: white;
 }
-.reservas div ul li:not(:last-child) {
+.reservas > div ul li:not(:last-child) {
   border-right: solid 1px #eee;
 }
-.reservas div ul li a {
+@media screen and (max-width: 1024px) {
+  .reservas > div ul li:not(:last-child):nth-child(3) {
+    border: none;
+  }
+}
+.reservas > div ul li a {
   transition: all 0.2s ease-in;
   text-decoration: none;
   color: #2c2c2c;
   font-size: 14px;
   font-weight: 600;
 }
-.reservas div ul li a div {
+.reservas > div ul li a div {
   position: relative;
   transition: background-color 0.2s ease-in;
   padding: 0px;
@@ -1127,7 +1165,7 @@ header {
   border-radius: 50%;
   background-color: #eee;
 }
-.reservas div ul li a div svg {
+.reservas > div ul li a div svg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1139,12 +1177,12 @@ header {
   fill: #2c2c2c;
   transition: fill 0.2s ease-in;
 }
-.reservas div ul li:last-child {
+.reservas > div ul li:last-child {
   text-align: center;
   margin: auto;
   width: 75%;
 }
-.reservas div ul li:last-child a {
+.reservas > div ul li:last-child a {
   color: #127045;
 }
 
@@ -1158,6 +1196,11 @@ header {
   flex-direction: row;
   padding-bottom: 32px;
 }
+@media screen and (max-width: 767px) {
+  .ofertas-voos .ofertas-voos-pre {
+    flex-direction: column;
+  }
+}
 .ofertas-voos .ofertas-voos-pre h5 {
   color: #2c2c2c;
   margin: auto 0;
@@ -1165,6 +1208,11 @@ header {
   font-weight: 700;
   font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 24px;
+}
+@media screen and (max-width: 767px) {
+  .ofertas-voos .ofertas-voos-pre h5 {
+    padding-bottom: 0;
+  }
 }
 .ofertas-voos .ofertas-voos-pre select {
   margin: 0;
@@ -1181,6 +1229,16 @@ header {
 }
 .ofertas-voos .ofertas-voos-pre select option {
   color: #000000;
+}
+@media screen and (max-width: 767px) {
+  .ofertas-voos .ofertas-voos-pre select {
+    width: auto;
+    margin: 4px auto auto 0;
+    padding: 0;
+    text-decoration: underline;
+    box-shadow: none;
+    text-align: left;
+  }
 }
 .ofertas-voos .ofertas-voos-exem ul {
   display: flex;
@@ -1271,11 +1329,24 @@ header {
 .ofertas-voos .ofertas-voos-mid div a:hover {
   text-decoration: underline;
 }
+@media screen and (max-width: 767px) {
+  .ofertas-voos .ofertas-voos-mid div a {
+    display: none;
+  }
+}
 
 .ofertas-voos-exemplos {
   max-width: 1188px;
   margin: auto;
   padding: 0 2%;
+}
+@media screen and (max-width: 767px) {
+  .ofertas-voos-exemplos {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    flex-wrap: wrap;
+  }
 }
 .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner {
   display: grid;
@@ -1283,10 +1354,35 @@ header {
   grid-template-rows: auto auto auto;
   gap: 32px;
 }
+@media screen and (max-width: 1024px) {
+  .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner {
+    grid-template-columns: auto auto;
+  }
+}
+.ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .hiden {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+  }
+  .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .hiden {
+    display: block;
+  }
+}
 .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner {
   border-radius: 10px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner {
+    width: 100%;
+  }
 }
 .ofertas-voos-exemplos .ofertas-voos-exemplos-conteiner .ofertas-voos-conteiner:hover img {
   transform: scale(1.1);
@@ -1339,6 +1435,11 @@ header {
   padding: 32px 2%;
   text-align: center;
 }
+@media screen and (max-width: 767px) {
+  .ofertas-voos-exemplos .ver-mais {
+    display: none;
+  }
+}
 .ofertas-voos-exemplos .ver-mais button {
   padding: 9px 30px;
   font-size: 16px;
@@ -1355,10 +1456,18 @@ header {
   color: #FFFFFF;
   background-color: #127045;
 }
+.ofertas-voos-exemplos .hiden {
+  display: none;
+}
 .ofertas-voos-exemplos .ver-todas-as-ofertas {
   margin: auto;
   padding: 32px 2%;
   text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .ofertas-voos-exemplos .ver-todas-as-ofertas {
+    display: block;
+  }
 }
 .ofertas-voos-exemplos .ver-todas-as-ofertas a {
   padding: 9px 30px;
@@ -1394,6 +1503,12 @@ header {
   grid-template-rows: 310px 52px 310px;
   gap: 32px;
 }
+@media screen and (max-width: 767px) {
+  .informacoes-uteis .informaçoes-uteis-grid-conteiner {
+    grid-template-columns: auto;
+    width: 100%;
+  }
+}
 .informacoes-uteis .informaçoes-uteis-grid-conteiner > div {
   width: 100%;
   height: 100%;
@@ -1426,6 +1541,11 @@ header {
   height: auto;
   transition: 0.3s all ease-in-out;
 }
+@media screen and (max-width: 1024px) {
+  .informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis div {
+    transition: none;
+  }
+}
 .informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis div:first-child {
   margin-top: auto;
   font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
@@ -1439,10 +1559,20 @@ header {
   bottom: 0%;
   font-size: 14px;
 }
+@media screen and (max-width: 1024px) {
+  .informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis div:last-child {
+    opacity: 1;
+  }
+}
 .informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis div:last-child span {
   font-size: 16px;
   font-weight: 700;
   margin-right: 10px;
+}
+@media screen and (max-width: 1024px) {
+  .informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis div:not(:last-child) {
+    transform: translateY(-35px);
+  }
 }
 .informacoes-uteis .informaçoes-uteis-grid-conteiner > div > a .info-conteiner-informaçoes-uteis:hover {
   transform: scale(1.01);
