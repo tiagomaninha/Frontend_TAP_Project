@@ -305,3 +305,20 @@ function closeModal() {
 }
 
 document.querySelector(".close-modal").addEventListener("click", closeModal)
+
+
+const dots = document.querySelectorAll('.dot-container div');
+
+dots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    // Remove a classe "ativo" de todas as divs
+    dots.forEach(d => d.classList.remove('ativo'));
+
+    // Adiciona a classe "ativo" na div clicada
+    dot.classList.add('ativo');
+  });
+});
+
+
+
+
