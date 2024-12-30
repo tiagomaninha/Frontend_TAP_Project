@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="style.css">  
 </head>
 <body>
+    <div class = "black-filter"></div>
+    <div class = "modal">
+        <div>
+            <h1>Número do voo</h1>
+            <span id = "numVoo"></span>
+        </div>
+        <div>
+            <h1>Dia do Voo</h1>
+            <span id = "diaVoo"></span>
+        </div>
+        <div>
+            <h1>Hora do Voo</h1>
+            <span id = "horaVoo"></span>
+        </div>
+        <div>
+            AVISO!
+        </div>
+    </div>
     <header>
         <div class = "mediaquery-sandwich">
             <ul>
@@ -520,15 +538,15 @@
                             </li>
                         </ul>
                         <div class = "main-menu-options">
-                            <div class = "main-options estado-voo">
-                                <form>
+                            <form>
+                                <div class = "main-options estado-voo">
                                     <div class = "option">
                                         <div class = "icon-container">
                                             <svg>
                                                 <use xlink:href="img/icons/icons.svg#plane_related--ida-volta"></use>
                                             </svg>
                                         </div>
-                                        <select placeholder = "Tipo de voo" id = "selectTipo">
+                                        <select placeholder = "Tipo de voo" id = "selectTipo" required>
                                             <option value = "1">Voo de ida</option>
                                             <option value = "2">Voo de regresso</option>
                                         </select>
@@ -540,7 +558,7 @@
                                                 <use xlink:href="img/icons/icons.svg#general--calendar"></use>
                                             </svg>
                                         </div>
-                                        <select placeholder = "Tipo de voo" id = "selectData">
+                                        <select placeholder = "Tipo de voo" id = "selectData" required>
                                         </select>
                                         <label>Selecionar datas</label>
                                     </div>
@@ -548,10 +566,11 @@
                                         <label>De</label>
                                         <div class = "input-container">
                                             <div>LIS</div>
-                                            <input type = "text" value = "Lisboa, Portugal" disabled>
+                                            <input type = "text" id = "deInput" value = "Lisboa, Portugal" minlength="4" required>
                                         </div>
                                     </div>
                                 </div>
+                                <input type = "submit" value = "Prosseguir    >">
                             </form>
                         </div>
                     </div>

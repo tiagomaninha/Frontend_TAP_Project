@@ -181,7 +181,7 @@ document.getElementById("mostra-row").addEventListener("click",function(){
 
 const selectTipo = document.getElementById("selectTipo")
 const selectData = document.getElementById("selectData")
-
+const deInput = document.getElementById("deInput")
 const hoje = new Date()
 
 function obterProximoNDia(n) {
@@ -190,7 +190,7 @@ function obterProximoNDia(n) {
     return proximoNDia
 }
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 2; i++) {
     let nDia = obterProximoNDia(i)
     const option = document.createElement("option")
     const dia = nDia.getDate().toString().padStart(2, '0');
@@ -198,26 +198,67 @@ for (let i = 0; i < 5; i++) {
     const ano = nDia.getFullYear();
 
     option.textContent = dia + "/" + mes + "/" + ano
-
+    option.value = i+1
     selectData.appendChild(option)
 }
 
 selectTipo.selectedIndex = "-1"
 selectData.selectedIndex = "-1"
 
-selectTipo.addEventListener("focus", function() {
+selectTipo.addEventListener("click", function() {
     if (this.selectedIndex == "-1") {
         this.selectedIndex = "0"
+        this.classList.add("selected")
     }
     
-    this.classList.add("selected")
 })
 
-
-selectData.addEventListener("focus", function() {
+selectData.addEventListener("click", function() {
     if (this.selectedIndex == "-1") {
         this.selectedIndex = "0"
+        this.classList.add("selected")
     }
 
-    this.classList.add("selected")
 })
+
+deInput.addEventListener("input", function() {
+    const abreviacao = this.previousElementSibling
+
+    if (this.value.length >= 3) {
+        abreviacao.innerText = this.value.slice(0, 3).toUpperCase()
+    }
+})
+
+let form = document.querySelector('form');
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    let numVooElement = document.getElementById("numVoo")
+    let diaVooElement = document.getElementById("diaVoo")
+    let horaVooElement = document.getElementById("horaVoo")
+
+    console.log(selectData.value)
+    numVooElement.innerText = "TP1"
+    diaVooElement.innerText = selectData.options[selectData.selectedIndex].text;
+
+    if ((deInput.value).toUpperCase().includes("LISBOA")) {
+        horaVooElement.innerText = "10:05"
+    } else {
+        horaVooElement.innerText = "12:10"
+    }
+
+
+    showModal()
+});
+
+
+function showModal() {
+    const modal = document.querySelector(".modal")
+    const filter = document.querySelector(".black-filter")
+    const allElements = document.querySelector("*:not(.modal)")
+    filter.style.display = "block"
+    modal.style.display = "flex"
+    allElements.style.overflow = "hidden"
+    allElements.style.pointerEvents = "none"
+}
