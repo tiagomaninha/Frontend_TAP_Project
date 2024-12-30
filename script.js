@@ -121,6 +121,9 @@ function changeMenu(menu) {
     currentMenu = menu
 }
 
+const filter = document.querySelector(".black-filter")
+const allElementsNotHeader = document.querySelector("section, footer")
+const body = document.querySelector("body")
 let sandwich = document.querySelector(".sandwich-menu")
 let liMainHeaderButton = document.querySelectorAll(".header-title")
 let subListTitle = document.querySelectorAll(".list-title")
@@ -130,9 +133,17 @@ sandwich.addEventListener("click", function() {
         let sandwichMenu = document.querySelector(".mediaquery-sandwich")
     
         if (sandwichMenu.classList.contains("active")) {
+            filter.style.display = "none"
+            body.style.overflow = "auto"
+            allElementsNotHeader.style.pointerEvents = "all"
+            document.querySelector("header").style.zIndex = "2"
             sandwichMenu.classList.remove("active")
             sandwich.innerHTML = "&#9776;"
         } else {
+            filter.style.display = "block"
+            body.style.overflow = "hidden"
+            allElementsNotHeader.style.pointerEvents = "none"
+            document.querySelector("header").style.zIndex = "6"
             sandwichMenu.classList.add("active")
             sandwich.innerHTML = "&#x2715;"
         }
@@ -255,7 +266,6 @@ form.addEventListener('submit', function (event) {
 
 function showModal() {
     const modal = document.querySelector(".modal")
-    const filter = document.querySelector(".black-filter")
     const allElements = document.querySelector("*:not(.modal)")
     filter.style.display = "block"
     modal.style.display = "flex"

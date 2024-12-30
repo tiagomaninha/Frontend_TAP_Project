@@ -628,7 +628,7 @@ ul.top-header{
         flex-direction: column;
         position: fixed;
         overflow-y: auto;
-        overflow-anchor: none;
+        overflow-x: hidden;
         scroll-behavior: inherit;
         top: 70px;
         right: 0%;
