@@ -78,12 +78,15 @@ ul.top-header{
         text-decoration: none;
     }
 }
-.top-header li:nth-child(6){
-    border-bottom: solid 1px #eee;
-    padding: 8px 16px 32px 16px;
-    margin: 0 16px;
-}
 
+@media screen and (max-width: 1024px){
+    .top-header li:nth-child(6){
+        border-bottom: solid 1px #eee;
+        padding: 8px 16px 32px 16px;
+        margin: 0 16px;
+    }
+    
+}
 .top-header li:nth-child(7){
     display: flex;
     order: 2;
@@ -97,9 +100,9 @@ ul.top-header{
 .top-header li:nth-child(7) span {
     justify-content: center;
     margin-left: 10px;
-    padding: 16px 32px 16px 0;
-
+    
     @media screen and (max-width: 1024px){
+        padding: 16px 32px 16px 0;
         display: none;
     }
 }
