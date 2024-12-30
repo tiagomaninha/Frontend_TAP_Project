@@ -37,6 +37,12 @@ header {
   color: white;
 }
 
+@media screen and (max-width: 1024px) {
+  ul.top-header {
+    padding-bottom: 50px;
+  }
+}
+
 .top-header li {
   padding: 8px;
 }
@@ -47,18 +53,69 @@ header {
   text-decoration: none;
 }
 
-.top-header li:last-child {
-  display: flex;
+.top-header li:nth-child(6) {
+  border-bottom: solid 1px #eee;
+  padding: 8px 16px 32px 16px;
+  margin: 0 16px;
 }
 
-.top-header li:last-child img {
+.top-header li:nth-child(7) {
+  display: flex;
+  order: 2;
+}
+
+.top-header li:nth-child(7) img {
   height: 15px;
   margin: auto;
 }
 
-.top-header li:last-child span {
+.top-header li:nth-child(7) span {
   justify-content: center;
   margin-left: 10px;
+  padding: 16px 32px 16px 0;
+}
+@media screen and (max-width: 1024px) {
+  .top-header li:nth-child(7) span {
+    display: none;
+  }
+}
+
+.top-header li:nth-child(7) .span2 {
+  display: none;
+  font-size: 16px;
+  color: #666;
+}
+@media screen and (max-width: 1024px) {
+  .top-header li:nth-child(7) .span2 {
+    display: block;
+  }
+}
+
+.top-header li:last-child {
+  display: none;
+  padding: 16px 32px;
+  font-size: 14px;
+  color: #666;
+  order: 1;
+  margin-top: 24px;
+}
+.top-header li:last-child span {
+  justify-content: center;
+  margin: auto;
+}
+.top-header li:last-child img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 1024px) {
+  .top-header li:last-child {
+    display: block;
+    display: flex;
+  }
+  .top-header li:last-child span {
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -74,6 +131,10 @@ header {
   }
   .top-header li {
     padding: 8px 32px;
+  }
+  .top-header li:nth-child(7) {
+    display: flex;
+    margin-right: auto;
   }
 }
 /* ON HOVER */
