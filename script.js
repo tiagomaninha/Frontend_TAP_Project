@@ -245,18 +245,41 @@ let form = document.querySelector('form');
 form.addEventListener('submit', function (event) {
     event.preventDefault()
 
-    let numVooElement = document.getElementById("numVoo")
-    let diaVooElement = document.getElementById("diaVoo")
+    let diaVooElement = document.querySelector(".dia-voo")
+    let tipoVooElement = document.querySelector(".tipo-voo")
     let horaVooElement = document.getElementById("horaVoo")
+    let horaVoo2Element = document.getElementById("horaVoo2")
+    let estadoVooElement = document.querySelector(".estado-voo")
+    let diaVoo = selectData.options[selectData.selectedIndex].text;
+    let tipoVoo = selectTipo.options[selectTipo.selectedIndex].text == "Voo de regresso" ? "Chegada" : "Destino";
+    let estadoVoo = "No horário"
+    diaVooElement.innerText = diaVoo
+    tipoVooElement.innerText = tipoVoo + " a " + deInput.value
 
-    console.log(selectData.value)
-    numVooElement.innerText = "TP1"
-    diaVooElement.innerText = selectData.options[selectData.selectedIndex].text;
+    if (tipoVoo == "Destino") {
+        let dia = Number(diaVoo.slice(0, 2))
+
+        if (dia % 2 != 0) {
+            estadoVoo = "Atrasado"
+        }        
+    } else {
+        let mes = Number(diaVoo.slice(3, 5))
+
+        if (mes % 2 != 0) {
+            estadoVoo = "Chegou"
+        } 
+    }
+
+    estadoVooElement.innerText = estadoVoo
 
     if ((deInput.value).toUpperCase().includes("LISBOA")) {
-        horaVooElement.innerText = "10:05"
+        let horaInicial = 10
+        horaVooElement.innerText = horaInicial + ":05"
+        horaVoo2Element.innerText = (horaInicial + 8) + ":05"
     } else {
-        horaVooElement.innerText = "12:10"
+        let horaInicial = 12
+        horaVooElement.innerText = horaInicial + ":10"
+        horaVoo2Element.innerText = (horaInicial + 8) + ":05"
     }
 
 
@@ -264,11 +287,21 @@ form.addEventListener('submit', function (event) {
 });
 
 
+const modal = document.querySelector(".modal")
+const allElements = document.querySelector("section, footer, header")
+
 function showModal() {
-    const modal = document.querySelector(".modal")
-    const allElements = document.querySelector("*:not(.modal)")
     filter.style.display = "block"
     modal.style.display = "flex"
-    allElements.style.overflow = "hidden"
+    body.style.overflow = "hidden"
     allElements.style.pointerEvents = "none"
 }
+
+function closeModal() {
+    filter.style.display = "none"
+    modal.style.display = "none"
+    body.style.overflow = "auto"
+    allElements.style.pointerEvents = "all"
+}
+
+document.querySelector(".close-modal").addEventListener("click", closeModal)

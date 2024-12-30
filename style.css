@@ -909,6 +909,9 @@ header {
 .info-container .info .multi-menu-container > li .main-menu-container .main-menu-header li:nth-child(2) {
   margin-right: auto;
 }
+.info-container .info .multi-menu-container > li .main-menu-container#menu4 .main-menu-header ul li {
+  white-space: wrap;
+}
 .info-container .info .multi-menu-container > li .main-menu-container .main-menu-options {
   display: flex;
   flex-direction: column;
@@ -999,6 +1002,11 @@ header {
   grid-template-columns: 1fr 1fr 1fr;
   position: relative;
 }
+@media screen and (max-width: 900px) {
+  .info-container .info .multi-menu-container > li .main-menu-container .main-menu-options form .estado-voo {
+    grid-template-columns: auto;
+  }
+}
 .info-container .info .multi-menu-container > li .main-menu-container .main-menu-options form .estado-voo .icon-container {
   position: relative;
   margin: auto 10px;
@@ -1020,7 +1028,7 @@ header {
 .info-container .info .multi-menu-container > li .main-menu-container .main-menu-options form .estado-voo > div:not(:last-child) label {
   position: absolute;
   top: 50%;
-  left: 20%;
+  left: 70px;
   margin: 0;
   transform: translateY(-50%);
   color: #666;
@@ -1033,7 +1041,7 @@ header {
   height: 100%;
   background-color: transparent;
   border: none;
-  padding-left: 20%;
+  padding-left: 70px;
   padding-top: 4%;
   text-align: left;
   font-size: 16px;
@@ -2352,17 +2360,24 @@ footer .footer-container a:hover {
   flex-direction: column;
   top: 50%;
   left: 50%;
-  width: 40%;
+  width: 70%;
   padding: 30px;
   background-color: white;
   border-radius: 8px;
   transform: translate(-50%, -50%);
   z-index: 4;
 }
-.modal div {
-  margin: 10px 0;
+.modal .close-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
 }
-.modal div h1 {
+.modal .close-modal:hover {
+  opacity: 0.8;
+}
+.modal .modal-title {
   display: inline;
   background-color: #127045;
   padding: 5px;
@@ -2371,6 +2386,33 @@ footer .footer-container a:hover {
   border-radius: 4px;
   font-size: 16px;
   text-align: center;
+}
+.modal .estado {
+  margin: 10px 0;
+}
+.modal .estado div:last-child {
+  margin-left: 5px;
+  font-weight: 700;
+  font-size: 18px;
+}
+.modal .modal-title + div {
+  display: inline;
+}
+.modal .voo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #ededed;
+  border-radius: 8px;
+  padding: 25px 20px 30px 25px;
+  margin: 10px 0;
+}
+.modal .voo h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c2c2c;
 }
 
 .black-filter {
