@@ -1406,22 +1406,41 @@ header {
 .requisitos {
   max-width: 1188px;
   margin: 100px auto 50px auto;
-  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  padding: 0 2%;
 }
 .requisitos > div {
   display: flex;
   flex-direction: row;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
 }
-.requisitos > div img {
-  padding: 20px 10px;
+@media screen and (max-width: 767px) {
+  .requisitos > div {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+}
+.requisitos > div > div:first-child img {
+  padding: 20px 16px;
   width: 172px;
   height: 79px;
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  .requisitos > div > div:first-child img {
+    width: 335px;
+    height: 201px;
+    padding: 0;
+    margin: auto;
+    margin-bottom: 24px;
+  }
 }
 .requisitos > div .info-requesitos {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-right: 32px;
 }
 .requisitos > div .info-requesitos div {
   padding: 10px;
@@ -1429,17 +1448,29 @@ header {
   font-size: 16px;
   color: #2c2c2c;
 }
+@media screen and (max-width: 767px) {
+  .requisitos > div .info-requesitos div {
+    padding: 0 0 10px 16px;
+  }
+}
 .requisitos > div .info-requesitos div:first-child {
   font-weight: 700;
   font-size: 22px;
   font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
 }
+@media screen and (max-width: 767px) {
+  .requisitos > div .info-requesitos div:first-child {
+    padding-left: 12px;
+  }
+}
 .requisitos > div .saiba-mais-requisitos {
-  margin: auto;
-  margin-right: 32px;
-  align-items: end;
-  justify-content: end;
-  justify-items: end;
+  margin: auto 16px auto auto;
+}
+@media screen and (max-width: 767px) {
+  .requisitos > div .saiba-mais-requisitos {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 .requisitos > div .saiba-mais-requisitos a {
   padding: 9px 30px;
@@ -1451,7 +1482,16 @@ header {
   border: solid 1px #72be44;
   border-radius: 4px;
   text-decoration: none;
+  white-space: nowrap;
   transition: 0.3s all ease-in-out;
+}
+@media screen and (max-width: 767px) {
+  .requisitos > div .saiba-mais-requisitos a {
+    width: 100%;
+    display: block;
+    padding: 9px 0;
+    text-align: center;
+  }
 }
 .requisitos > div .saiba-mais-requisitos a:hover {
   background-color: #9ee851;
@@ -1478,6 +1518,12 @@ header {
   grid-template-columns: 67% auto;
   grid-template-rows: minmax(210px, 210px) minmax(300px, 300px);
   gap: 32px;
+}
+@media screen and (max-width: 1024px) {
+  .destaques .destaques-container {
+    grid-template-columns: auto;
+    width: 100%;
+  }
 }
 .destaques .destaques-container > div {
   border-radius: 16px;
@@ -1579,6 +1625,11 @@ header {
   background-color: white;
   border-radius: 16px;
 }
+@media screen and (max-width: 1024px) {
+  .destaques .destaques-hover-menu {
+    width: 100%;
+  }
+}
 .destaques .destaques-hover-menu .destaques-hover-menu-top {
   display: flex;
   flex-direction: row;
@@ -1607,7 +1658,12 @@ header {
   margin: 0;
   font-size: 16px;
   font-weight: 700;
-  padding: 0 40px 0 50px;
+  padding: 0 40px 0 40px;
+}
+@media screen and (max-width: 767px) {
+  .destaques .destaques-hover-menu div p {
+    padding: 0 40px 32px 40px;
+  }
 }
 .destaques .destaques-hover-menu div .destaques-hover-menu-text {
   font-size: 30px;
@@ -1617,6 +1673,12 @@ header {
 .destaques .destaques-hover-menu div .destaques-hover-menu-links {
   display: flex;
   flex-direction: row;
+}
+@media screen and (max-width: 767px) {
+  .destaques .destaques-hover-menu div .destaques-hover-menu-links {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .destaques .destaques-hover-menu div .destaques-hover-menu-links a {
   padding: 9px 30px;
@@ -1632,6 +1694,12 @@ header {
   cursor: pointer;
   transition: 0.3s all ease-in-out;
 }
+@media screen and (max-width: 767px) {
+  .destaques .destaques-hover-menu div .destaques-hover-menu-links a {
+    margin: 0 40px 16px 40px;
+    text-align: center;
+  }
+}
 .destaques .destaques-hover-menu div .destaques-hover-menu-links a:hover {
   background-color: #9ee851;
   border: solid 1px #9ee851;
@@ -1642,6 +1710,11 @@ header {
   background-color: #FFFFFF;
   border: solid 1px #127045;
   transition: 0.2s all ease-in-out;
+}
+@media screen and (max-width: 767px) {
+  .destaques .destaques-hover-menu div .destaques-hover-menu-links .last-link a {
+    margin: 0 40px 40px 40px;
+  }
 }
 .destaques .destaques-hover-menu div .destaques-hover-menu-links .last-link a:hover {
   color: #FFFFFF;
