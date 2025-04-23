@@ -14,7 +14,8 @@ Este projeto é uma recriação estática completa do **frontend do website ofic
 ## 🛠️ Technologies Used / Tecnologias Utilizadas
 
 - HTML5  
-- CSS3  
+- CSS3
+- SCSS
 - JavaScript (Vanilla JS)  
 
 No external libraries or frameworks were used.  
